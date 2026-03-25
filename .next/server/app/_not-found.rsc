@@ -1,7 +1,0 @@
-1:HL["/_next/static/css/04838c301b03096e.css","style",{"crossOrigin":""}]
-0:["ElgMZ7WVgp6Ivb8xCDguz",[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",true],"$L2",[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/04838c301b03096e.css","precedence":"next","crossOrigin":""}]],"$L3"]]]]
-4:I[6954,[],""]
-5:I[7264,[],""]
-2:[null,["$","html",null,{"lang":"es","children":["$","body",null,{"children":["$","$L4",null,{"parallelRouterKey":"children","segmentPath":["children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","div",null,{"className":"min-h-screen flex items-center justify-center","children":["$","h1",null,{"className":"text-2xl","children":"Página no encontrada"}]}],"notFoundStyles":[],"childProp":{"current":["$L6",["$","div",null,{"className":"min-h-screen flex items-center justify-center","children":["$","h1",null,{"className":"text-2xl","children":"Página no encontrada"}]}],null],"segment":"__PAGE__"},"styles":null}]}]}],null]
-3:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"Molric - Responde automáticamente tus WhatsApp"}],["$","meta","3",{"name":"description","content":"No pierdas más clientes por no responder a tiempo. Molric responde por vos 24/7."}]]
-6:null

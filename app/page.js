@@ -132,16 +132,15 @@ export default function Home() {
         <div className="hero-content">
           <span className="hero-tag">WhatsApp · Automatización · IA</span>
           <h1 className="hero-headline">
-            ¿Cuántos clientes estás<br />
-            perdiendo por no responder<br />
-            <em>a tiempo?</em>
+            Respondé tus mensajes<br />
+            a tiempo y evitá<br />
+            <em>perder clientes.</em>
           </h1>
           <p className="hero-sub">
-            Molric responde tus mensajes automáticamente y te avisa cuando alguien quiere comprar. Recupera las ventas que se te escapan todos los días.
+            Molric responde tus mensajes automáticamente, organiza las consultas y te avisa cuando un cliente está listo para comprar.
           </p>
           <div className="hero-actions">
-            <a className="btn-primary" href="https://wa.me/5491234567890?text=Hola,%20quiero%20saber%20más%20sobre%20Molric">Hablar por WhatsApp</a>
-            <a className="btn-secondary" href="#problem">Ver cómo funciona</a>
+            <a className="btn-primary" href="https://wa.me/5491234567890?text=Hola,%20quiero%20saber%20más%20sobre%20Molric">Consultar por WhatsApp</a>
           </div>
         </div>
       </section>
@@ -212,8 +211,8 @@ export default function Home() {
           </div>
           <div className="step reveal reveal-delay-2">
             <div className="step-circle">03</div>
-            <h3>Notificar</h3>
-            <p>Vos recibís solo los leads calificados para cerrar la venta.</p>
+            <h3>Molric te avisa</h3>
+            <p>Molric te avisa cuando alguien quiere comprar.</p>
           </div>
         </div>
       </section>
@@ -280,11 +279,10 @@ export default function Home() {
       <section id="cta">
         <div className="cta-glow"></div>
         <span className="section-tag reveal">Listo para cambiar?</span>
-        <h2 className="section-title reveal">Dejá de perder ventas<br /><em style={{ color: 'var(--accent)', fontStyle: 'normal' }}>todos los días.</em></h2>
+        <h2 className="section-title reveal">Empezá a responder mejor<br /><em style={{ color: 'var(--accent)', fontStyle: 'normal' }}>y no perder oportunidades.</em></h2>
         <p className="section-sub reveal reveal-delay-1">Instalación rápida + mantenimiento accesible. Empezá hoy mismo.</p>
         <div className="cta-actions reveal reveal-delay-2">
-          <a className="btn-primary" href="#form">Quiero esto en mi negocio</a>
-          <a className="btn-secondary" href="https://wa.me/5491234567890?text=Hola,%20quiero%20saber%20más%20sobre%20Molric">Hablar por WhatsApp</a>
+          <a className="btn-primary" href="#form">Quiero implementar esto</a>
         </div>
       </section>
 
