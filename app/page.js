@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import HeroParticles from './components/HeroParticles'
 
 export default function Home() {
   const [formData, setFormData] = useState({
@@ -174,9 +175,10 @@ export default function Home() {
 
       {/* HERO */}
       <section id="hero">
+        <HeroParticles />
         <div className="hero-grid-bg"></div>
         <div className="hero-glow"></div>
-        <div className="hero-content">
+        <div className="hero-content" style={{ position: 'relative', zIndex: 1 }}>
           <span className="hero-tag">WhatsApp · Automatización · IA · Agente con nombre propio</span>
           <h1 className="hero-headline">
             Creá tu agente de ventas<br />
