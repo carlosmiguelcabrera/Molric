@@ -87,12 +87,13 @@ export default function Home() {
 
   const animateTyping = async () => {
     const messages = [
-      { role: 'client', text: '¿tenés eso en stock?' },
+      { role: 'client', text: '¿Hola, tenés zapatillas talle 42?' },
       { delay: 600 },
-      { role: 'molric', text: '¡Hola! Sí, tenemos. ¿Cuántas unidades querés?' },
-      { role: 'client', text: '2' },
-      { role: 'molric', text: 'Perfecto. Son $X. ¿Te los reservo?' },
-      { role: 'client', text: 'sí, te pago por transferencia' },
+      { role: 'agent', text: '¡Hola! 👟 Sí, tenemos en talle 42. ¿Qué modelo te interesa, el Runner X o el Urban Pro?' },
+      { role: 'client', text: 'el Runner X, ¿cuánto sale?' },
+      { role: 'agent', text: 'El Runner X talle 42 está en $89.990. ¿Querés que te lo reserve? Tenemos stock limitado.' },
+      { role: 'client', text: 'sí, lo quiero. te pago por transferencia' },
+      { role: 'agent', text: 'Perfecto ✅ Te mando los datos de pago ahora. ¡Gracias por elegirnos!' },
     ]
 
     for (let msgIdx = 0; msgIdx < messages.length; msgIdx++) {
@@ -176,14 +177,14 @@ export default function Home() {
         <div className="hero-grid-bg"></div>
         <div className="hero-glow"></div>
         <div className="hero-content">
-          <span className="hero-tag">WhatsApp · Automatización · IA</span>
+          <span className="hero-tag">WhatsApp · Automatización · IA · Agente con nombre propio</span>
           <h1 className="hero-headline">
-            Respondé tus mensajes<br />
-            a tiempo y evitá<br />
+            Creá tu agente de ventas<br />
+            en WhatsApp y dejá de<br />
             <em>perder clientes.</em>
           </h1>
           <p className="hero-sub">
-            Molric responde tus mensajes automáticamente, organiza las consultas y te avisa cuando un cliente está listo para comprar.
+            Con Molric creás un agente personalizado —con nombre, tono y conocimiento de tu negocio— que responde al instante, filtra consultas y te avisa cuando alguien está listo para comprar.
           </p>
           <div className="hero-actions">
             <a className="btn-primary" href="https://wa.me/5491234567890?text=Hola,%20quiero%20saber%20más%20sobre%20Molric">Consultar por WhatsApp</a>
@@ -215,26 +216,26 @@ export default function Home() {
             <li className="problem-item">
               <span className="problem-icon">§</span>
               <div className="problem-text">
-                <strong>Mensajes desordenados</strong>
-                <p>Tenés mil mensajes y no sabés por dónde empezar.</p>
+                <strong>Sin identidad propia</strong>
+                <p>Los bots genéricos no representan tu marca ni tu forma de hablar.</p>
               </div>
             </li>
           </ul>
         </div>
         <div className="solution-right reveal reveal-delay-2">
           <span className="section-tag">La solución</span>
-          <h2 className="section-title">Molric responde por vos.</h2>
+          <h2 className="section-title">Tu agente con nombre propio responde por vos.</h2>
           <div className="solution-card">
-            <h4>Respuestas automáticas</h4>
-            <p>Molric contesta al instante, organizando consultas y filtrando a los que están listos para comprar.</p>
+            <h4>Un agente, tu identidad</h4>
+            <p>Le ponés nombre, entrenás con la info de tu negocio y suena como vos. Tus clientes no hablan con un bot, hablan con tu agente.</p>
           </div>
           <div className="solution-card">
             <h4>Menos estrés, más ventas</h4>
-            <p>Dejá de estar pegado al celular. Recibí solo las oportunidades reales.</p>
+            <p>Tu agente filtra, responde y te avisa solo cuando hay una oportunidad real. Dejá de estar pegado al celular.</p>
           </div>
           <div className="solution-card">
             <h4>Todo ordenado</h4>
-            <p>Consultas priorizadas, contactos guardados, historial completo.</p>
+            <p>Consultas priorizadas, contactos guardados, historial completo gestionado por Molric.</p>
           </div>
         </div>
       </section>
@@ -247,18 +248,18 @@ export default function Home() {
         <div className="steps">
           <div className="step reveal">
             <div className="step-circle">01</div>
-            <h3>Conectar</h3>
-            <p>El cliente escribe por WhatsApp a tu número.</p>
+            <h3>El cliente escribe</h3>
+            <p>Tu cliente manda un mensaje a tu WhatsApp, como siempre.</p>
           </div>
           <div className="step reveal reveal-delay-1">
             <div className="step-circle">02</div>
-            <h3>Responder</h3>
-            <p>Molric contesta automáticamente con información útil.</p>
+            <h3>Tu agente responde</h3>
+            <p>Tu agente —con nombre y tono propio— contesta al instante con la info de tu negocio.</p>
           </div>
           <div className="step reveal reveal-delay-2">
             <div className="step-circle">03</div>
-            <h3>Molric te avisa</h3>
-            <p>Molric te avisa cuando alguien quiere comprar.</p>
+            <h3>Vos cerrás la venta</h3>
+            <p>Molric te notifica solo cuando hay un cliente listo para comprar. Vos entrás a cerrar.</p>
           </div>
         </div>
       </section>
@@ -269,45 +270,46 @@ export default function Home() {
         <h2 className="section-title reveal">Lo que vas a lograr.</h2>
         <div className="benefits-grid">
           <div className="benefit-card reveal">
-              <span className="benefit-icon">+</span>
-            <h3>No más clientes perdidos</h3>
-            <p>Respuestas instantáneas mantienen a tus clientes enganchados.</p>
+              <span className="benefit-icon">⚡</span>
+            <h3>Respuestas al instante</h3>
+            <p>Tu agente contesta en segundos, las 24 horas. Ninguna consulta queda sin respuesta.</p>
           </div>
           <div className="benefit-card reveal reveal-delay-1">
-              <span className="benefit-icon">⟡</span>
-            <h3>Más ventas sin más trabajo</h3>
-            <p>Automatización que genera ingresos extra sin horas extras.</p>
+              <span className="benefit-icon">🎯</span>
+            <h3>Solo leads calificados</h3>
+            <p>Tu agente filtra y califica. Vos solo recibís los que ya quieren comprar.</p>
           </div>
           <div className="benefit-card reveal reveal-delay-2">
-              <span className="benefit-icon">‡</span>
-            <h3>Menos estrés</h3>
-            <p>Dejá de estar pegado al teléfono todo el día.</p>
+              <span className="benefit-icon">🪪</span>
+            <h3>Identidad de marca</h3>
+            <p>Tu agente tiene nombre, personalidad y habla como tu negocio. No como un bot genérico.</p>
           </div>
           <div className="benefit-card reveal reveal-delay-3">
-              <span className="benefit-icon">■</span>
-            <h3>Todo ordenado</h3>
-            <p>Consultas organizadas y priorizadas automáticamente.</p>
+              <span className="benefit-icon">📋</span>
+            <h3>Todo bajo control</h3>
+            <p>Molric organiza cada conversación: historial, prioridades y seguimiento en un solo lugar.</p>
           </div>
         </div>
       </section>
 
       {/* DEMO */}
       <section id="demo">
-        <span className="section-tag reveal">Ejemplo</span>
-        <h2 className="section-title reveal">Mirá cómo funciona en la práctica.</h2>
+        <span className="section-tag reveal">Ejemplo real</span>
+        <h2 className="section-title reveal">Así atiende tu agente mientras vos hacés otra cosa.</h2>
+        <p className="section-sub reveal reveal-delay-1" style={{ margin: '0 auto 40px', textAlign: 'center' }}>Este es <strong style={{ color: 'var(--accent)' }}>Sofía</strong>, el agente de una zapatería. Cada negocio tiene el suyo, con nombre y personalidad propia.</p>
         <div className="demo-card reveal reveal-delay-1">
           <div style={{ textAlign: 'left', fontSize: '13px', lineHeight: '2.2' }}>
             {demoMessages.map((msg, idx) => (
               msg.role === 'client' ? (
                 <div key={idx}>
                   <p className="demo-line-client">
-                    <strong style={{ color: 'var(--accent)' }}>Cliente:</strong> {msg.text}
+                    <strong style={{ color: 'var(--text-muted)' }}>Cliente:</strong> {msg.text}
                   </p>
                 </div>
-              ) : msg.role === 'molric' ? (
+              ) : msg.role === 'agent' ? (
                 <div key={idx}>
                   <p className="demo-line-molric">
-                    <strong style={{ color: 'var(--accent)' }}>Molric:</strong> {msg.text}
+                    <strong style={{ color: 'var(--accent)' }}>Sofía:</strong> {msg.text}
                   </p>
                 </div>
               ) : null
@@ -315,7 +317,7 @@ export default function Home() {
           </div>
           {demoAnimationComplete && (
             <p className="demo-caption" style={{ fontSize: '12px', color: 'var(--text-muted)', marginTop: '20px', lineHeight: '1.6', fontStyle: 'italic' }}>
-              Disponible 24/7, responde al instante con información de tu negocio y mantiene conversaciones claras sin que tengas que intervenir.
+              Sofía opera 24/7 con la información de la zapatería. Tu agente puede llamarse como quieras y hablar como habla tu marca.
             </p>
           )}
         </div>
@@ -324,18 +326,18 @@ export default function Home() {
       {/* CTA */}
       <section id="cta">
         <div className="cta-glow"></div>
-        <span className="section-tag reveal">¿Querés implementar esto en tu negocio?</span>
-        <h2 className="section-title reveal">Empezá a responder mejor<br /><em style={{ color: 'var(--accent)', fontStyle: 'normal' }}>y no perder oportunidades.</em></h2>
-        <p className="section-sub reveal reveal-delay-1">Instalación rápida + mantenimiento accesible. Empezá hoy mismo.</p>
+        <span className="section-tag reveal">¿Querés tu propio agente?</span>
+        <h2 className="section-title reveal">Creá tu agente hoy<br /><em style={{ color: 'var(--accent)', fontStyle: 'normal' }}>y no pierdas más oportunidades.</em></h2>
+        <p className="section-sub reveal reveal-delay-1">Setup rápido, mantenimiento incluido. Tu agente funcionando en días, no semanas.</p>
         <div className="cta-actions reveal reveal-delay-2">
-          <a className="btn-primary" href="#form">Quiero implementar esto</a>
+          <a className="btn-primary" href="#form">Quiero mi agente</a>
         </div>
       </section>
 
       {/* FORM */}
       <section id="form">
         <span className="section-tag reveal">Contacto</span>
-        <h2 className="section-title reveal">Dejanos tus datos.</h2>
+        <h2 className="section-title reveal">Empezá a crear tu agente.</h2>
         <div className="form-container reveal reveal-delay-1">
           <form onSubmit={handleSubmit}>
             <div className="form-group">
@@ -377,7 +379,7 @@ export default function Home() {
                 placeholder="Nombre de tu negocio"
               />
             </div>
-            <button className="form-submit" type="submit">Enviar consulta</button>
+            <button className="form-submit" type="submit">Quiero mi agente</button>
           </form>
         </div>
       </section>
@@ -391,7 +393,7 @@ export default function Home() {
           <li><a href="#benefits">Beneficios</a></li>
           <li><a href="#form">Contacto</a></li>
         </ul>
-        <span className="footer-copy">2024 Molric. Todos los derechos reservados.</span>
+        <span className="footer-copy">2026 Molric. Todos los derechos reservados.</span>
       </footer>
 
       {/* Botón flotante WhatsApp */}
