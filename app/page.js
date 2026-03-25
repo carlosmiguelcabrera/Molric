@@ -11,6 +11,28 @@ export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [demoMessages, setDemoMessages] = useState([])
   const [demoAnimationComplete, setDemoAnimationComplete] = useState(false)
+  const [theme, setTheme] = useState('dark')
+
+  // Initialize theme from localStorage
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const savedTheme = localStorage.getItem('theme') || 'dark'
+      setTheme(savedTheme)
+      document.documentElement.setAttribute('data-theme', savedTheme)
+    }
+  }, [])
+
+  // Update theme when it changes
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      document.documentElement.setAttribute('data-theme', theme)
+      localStorage.setItem('theme', theme)
+    }
+  }, [theme])
+
+  const toggleTheme = () => {
+    setTheme(prevTheme => prevTheme === 'dark' ? 'light' : 'dark')
+  }
 
   const handleChange = (e) => {
     setFormData({
@@ -69,7 +91,7 @@ export default function Home() {
       { delay: 600 },
       { role: 'molric', text: '¡Hola! Sí, tenemos. ¿Cuántas unidades querés?' },
       { role: 'client', text: '2' },
-      { role: 'molric', text: 'Perfecto Son $X. ¿Te los reservo?' },
+      { role: 'molric', text: 'Perfecto. Son $X. ¿Te los reservo?' },
       { role: 'client', text: 'sí, te pago por transferencia' },
     ]
 
@@ -105,6 +127,30 @@ export default function Home() {
           <li><a href="#how">Proceso</a></li>
           <li><a href="#benefits">Beneficios</a></li>
         </ul>
+        <button
+          className="theme-toggle"
+          onClick={toggleTheme}
+          aria-label="Cambiar tema"
+          title={theme === 'dark' ? 'Modo claro' : 'Modo oscuro'}
+        >
+          {theme === 'dark' ? (
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          ) : (
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          )}
+        </button>
         <a className="nav-cta" href="#form">Contacto</a>
         <button
           className={`hamburger ${mobileMenuOpen ? 'active' : ''}`}
@@ -149,7 +195,7 @@ export default function Home() {
       <section id="problem">
         <div className="reveal">
           <span className="section-tag">El problema</span>
-          <h2 className="section-title">Tu negocio pierde ventas todos los días.</h2>
+          <h2 className="section-title">Tu negocio puede estar perdiendo ventas por no responder a tiempo.</h2>
           <p className="section-sub">Cada consulta que no respondés a tiempo es un cliente que se va con la competencia.</p>
           <ul className="problem-list">
             <li className="problem-item">
@@ -269,7 +315,7 @@ export default function Home() {
           </div>
           {demoAnimationComplete && (
             <p className="demo-caption" style={{ fontSize: '12px', color: 'var(--text-muted)', marginTop: '20px', lineHeight: '1.6', fontStyle: 'italic' }}>
-              Disponible las 24 horas, responde cualquier consulta con información exacta de tu negocio y la misma calidez en cada conversación — sin tiempos de espera, sin respuestas genéricas.
+              Disponible 24/7, responde al instante con información de tu negocio y mantiene conversaciones claras sin que tengas que intervenir.
             </p>
           )}
         </div>
@@ -278,7 +324,7 @@ export default function Home() {
       {/* CTA */}
       <section id="cta">
         <div className="cta-glow"></div>
-        <span className="section-tag reveal">Listo para cambiar?</span>
+        <span className="section-tag reveal">¿Querés implementar esto en tu negocio?</span>
         <h2 className="section-title reveal">Empezá a responder mejor<br /><em style={{ color: 'var(--accent)', fontStyle: 'normal' }}>y no perder oportunidades.</em></h2>
         <p className="section-sub reveal reveal-delay-1">Instalación rápida + mantenimiento accesible. Empezá hoy mismo.</p>
         <div className="cta-actions reveal reveal-delay-2">
