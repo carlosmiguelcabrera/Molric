@@ -17,7 +17,8 @@ export default function HeroParticles() {
     const getColors = () => {
       const style = getComputedStyle(document.documentElement)
       const accent = style.getPropertyValue('--accent').trim() || '#00e5ff'
-      return { accent }
+      const isLight = document.documentElement.getAttribute('data-theme') === 'light'
+      return { accent, isLight }
     }
 
     // Parse a hex/rgb color into r,g,b components
@@ -64,8 +65,12 @@ export default function HeroParticles() {
     const draw = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
 
-      const { accent } = getColors()
+      const { accent, isLight } = getColors()
       const { r, g, b } = parseColor(accent)
+      // In light mode boost opacity so particles are visible on a white background
+      const lineOpacity = isLight ? 0.18 : 0.07
+      const particleOpacityBase = isLight ? 0.55 : 0
+      const particleOpacityRange = isLight ? 0.2 : 1
 
       // Draw connection lines
       for (let i = 0; i < particles.length; i++) {
@@ -77,7 +82,7 @@ export default function HeroParticles() {
             ctx.beginPath()
             ctx.moveTo(particles[i].x, particles[i].y)
             ctx.lineTo(particles[j].x, particles[j].y)
-            ctx.strokeStyle = `rgba(${r},${g},${b},0.07)`
+            ctx.strokeStyle = `rgba(${r},${g},${b},${lineOpacity})`
             ctx.lineWidth = 0.6
             ctx.stroke()
           }
@@ -88,7 +93,11 @@ export default function HeroParticles() {
       for (const p of particles) {
         ctx.beginPath()
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2)
-        ctx.fillStyle = `rgba(${r},${g},${b},${p.opacity})`
+        // p.opacity is always in 0–1 range; in light mode we shift the base up
+        const opacity = isLight
+          ? particleOpacityBase + p.opacity * particleOpacityRange
+          : p.opacity
+        ctx.fillStyle = `rgba(${r},${g},${b},${opacity})`
         ctx.fill()
       }
     }

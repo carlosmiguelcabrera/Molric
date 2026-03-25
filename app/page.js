@@ -298,7 +298,7 @@ export default function Home() {
       <section id="demo">
         <span className="section-tag reveal">Ejemplo real</span>
         <h2 className="section-title reveal">Así atiende tu agente mientras vos hacés otra cosa.</h2>
-        <p className="section-sub reveal reveal-delay-1" style={{ margin: '0 auto 40px', textAlign: 'center' }}>Este es <strong style={{ color: 'var(--accent)' }}>Sofía</strong>, el agente de una zapatería. Cada negocio tiene el suyo, con nombre y personalidad propia.</p>
+        <p className="section-sub reveal reveal-delay-1" style={{ margin: '0 auto 40px', textAlign: 'center' }}>Esta es <strong style={{ color: 'var(--accent)' }}>Sofía</strong>, el agente de una zapatería. Cada negocio tiene el suyo, con nombre y personalidad propia.</p>
         <div className="demo-card reveal reveal-delay-1">
           <div style={{ textAlign: 'left', fontSize: '13px', lineHeight: '2.2' }}>
             {demoMessages.map((msg, idx) => (
