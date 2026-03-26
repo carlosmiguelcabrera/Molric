@@ -250,7 +250,7 @@ nav {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 140px 60px 100px;
+  padding: 100px 60px 180px;
   position: relative;
   overflow: hidden;
 }
@@ -773,9 +773,9 @@ footer {
   }
   
   section { padding: 64px 28px; }
-  #hero { padding: 110px 28px 70px; }
+  #hero { padding: 80px 28px 40px; min-height: auto; }
   .hero-headline { font-size: clamp(36px, 5vw, 56px); margin-bottom: 24px; }
-  .hero-tag { font-size: 10px; padding: 5px 12px; margin-bottom: 28px; }
+  .hero-tag { font-size: 9px; letter-spacing: 0.12em; white-space: nowrap; padding: 5px 12px; margin-bottom: 28px; }
   .hero-sub { font-size: 14px; max-width: 480px; }
   .hero-actions { gap: 12px; }
   
@@ -847,9 +847,9 @@ footer {
   }
   
   section { padding: 48px 16px; }
-  #hero { padding: 90px 16px 56px; }
+  #hero { padding: 60px 16px 30px; min-height: auto; }
   .hero-headline { font-size: clamp(28px, 6vw, 40px); margin-bottom: 20px; line-height: 1.2; }
-  .hero-tag { font-size: 9px; padding: 4px 10px; margin-bottom: 20px; }
+  .hero-tag { font-size: 7.5px; letter-spacing: 0.05em; white-space: nowrap; padding: 4px 10px; margin-bottom: 20px; }
   .hero-sub { font-size: 13px; max-width: 100%; margin-bottom: 36px; line-height: 1.8; }
   .hero-actions { flex-direction: column; }
   .btn-primary, .btn-secondary { width: 100%; padding: 14px 24px; font-size: 11px; }

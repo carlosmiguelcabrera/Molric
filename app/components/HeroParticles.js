@@ -58,7 +58,10 @@ export default function HeroParticles() {
     }
 
     const initParticles = () => {
-      const count = 80 + Math.floor(Math.random() * 21) // 80–100
+      // Ajustar cantidad de partículas según el área para que no se amontonen en mobile
+      const area = canvas.width * canvas.height
+      // Definimos una cantidad base proporcional, con mínimo de 20 y máximo de 100
+      const count = Math.min(100, Math.max(20, Math.floor(area / 12000)))
       particles = Array.from({ length: count }, createParticle)
     }
 
@@ -124,6 +127,7 @@ export default function HeroParticles() {
 
     const handleResize = () => {
       resize()
+      initParticles() // Re-calcular la cantidad y posición al cambiar el tamaño de la pantalla
     }
 
     resize()
