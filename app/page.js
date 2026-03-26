@@ -179,14 +179,14 @@ export default function Home() {
         <div className="hero-grid-bg"></div>
         <div className="hero-glow"></div>
         <div className="hero-content" style={{ position: 'relative', zIndex: 1 }}>
-          <span className="hero-tag">WhatsApp · Automatización · IA · Agente con nombre propio</span>
+          <span className="hero-tag">WhatsApp · Automatización · Agente con nombre propio</span>
           <h1 className="hero-headline">
-            Creá tu agente de ventas<br />
-            en WhatsApp y dejá de<br />
-            <em>perder clientes.</em>
+            Respondé al instante,<br />
+            incluso cuando<br />
+            <em>no estás.</em>
           </h1>
           <p className="hero-sub">
-            Con Molric creás un agente personalizado —con nombre, tono y conocimiento de tu negocio— que responde al instante, filtra consultas y te avisa cuando alguien está listo para comprar.
+            Molric crea un agente en WhatsApp que habla como tu negocio y filtra oportunidades reales.
           </p>
           <div className="hero-actions">
             <a className="btn-primary" href="https://wa.me/5491234567890?text=Hola,%20quiero%20saber%20más%20sobre%20Molric">Consultar por WhatsApp</a>
