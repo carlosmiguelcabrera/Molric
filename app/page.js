@@ -189,7 +189,7 @@ export default function Home() {
             Molric crea un agente en WhatsApp que habla como tu negocio y filtra oportunidades reales.
           </p>
           <div className="hero-actions">
-            <a className="btn-primary" href="https://wa.me/5491234567890?text=Hola,%20quiero%20saber%20más%20sobre%20Molric">Consultar por WhatsApp</a>
+            <a className="btn-primary" href="https://wa.me/5491171407170?text=Hola,%20quiero%20saber%20más%20sobre%20Molric">Consultar por WhatsApp</a>
           </div>
         </div>
       </section>
@@ -400,7 +400,7 @@ export default function Home() {
 
       {/* Botón flotante WhatsApp */}
       <a
-        href="https://wa.me/5491234567890?text=Hola,%20quiero%20saber%20más%20sobre%20Molric"
+        href="https://wa.me/5491171407170?text=Hola,%20quiero%20saber%20más%20sobre%20Molric"
         style={{
           position: 'fixed',
           bottom: '20px',

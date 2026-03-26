@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" fill="#07080a"/>
+  <g transform="translate(86, 356)" stroke="#ffffff" stroke-width="12" stroke-linejoin="round">
+    <path fill="#ffffff" d="
+      M 30 -200 
+      L 80 -200 
+      L 145 -70 
+      L 210 -200 
+      L 260 -200 
+      L 260 0 
+      L 210 0 
+      L 210 -120 
+      L 155 -20 
+      L 135 -20 
+      L 80 -120 
+      L 80 0 
+      L 30 0 
+      Z" />
+  </g>
+  <rect x="375" y="326" width="65" height="30" rx="3" fill="#00e5ff" />
+</svg>
