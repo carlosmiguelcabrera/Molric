@@ -580,8 +580,8 @@ section { padding: 100px 60px; }
   backdrop-filter: blur(12px);
   position: relative;
   overflow: hidden;
-  max-height: 600px;
-  overflow-y: auto;
+  min-height: 620px;
+  overflow-y: hidden;
   box-shadow: 0 8px 48px rgba(0,0,0,0.15), 0 0 0 1px var(--accent-dim);
 }
 
@@ -803,7 +803,7 @@ footer {
   .benefit-card h3 { font-size: 14px; margin-bottom: 10px; }
   .benefit-card p { font-size: 12px; }
   
-  .demo-card { max-width: 100%; padding: 32px 24px; }
+  .demo-card { max-width: 100%; padding: 32px 24px; min-height: 600px; max-height: none; }
   .demo-card p { font-size: 12px; padding: 8px 12px; margin: 6px 0; }
   .demo-caption { font-size: 11px; margin-top: 16px; }
   
@@ -876,7 +876,7 @@ footer {
   .benefit-card h3 { font-size: 15px; margin-bottom: 10px; }
   .benefit-card p { font-size: 13px; line-height: 1.6; }
   
-  .demo-card { padding: 24px 20px; max-height: 440px; }
+  .demo-card { padding: 24px 20px; min-height: 600px; max-height: none; }
   .demo-card p { font-size: 13px; padding: 8px 12px; margin: 6px 0; line-height: 1.5; }
   .demo-caption { font-size: 12px; margin-top: 16px; }
   

@@ -330,7 +330,7 @@ export default function Home() {
         <div className="cta-glow"></div>
         <span className="section-tag reveal">¿Querés tu propio agente?</span>
         <h2 className="section-title reveal">Creá tu agente hoy<br /><em style={{ color: 'var(--accent)', fontStyle: 'normal' }}>y no pierdas más oportunidades.</em></h2>
-        <p className="section-sub reveal reveal-delay-1">Setup rápido, mantenimiento incluido. Tu agente funcionando en días, no semanas.</p>
+        <p className="section-sub reveal reveal-delay-1">Setup rápido y suscripción mensual accesible. Tu agente funcionando en días, sin contratos. Cancelás cuando querés.</p>
         <div className="cta-actions reveal reveal-delay-2">
           <a className="btn-primary" href="#form">Quiero mi agente</a>
         </div>
