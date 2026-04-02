@@ -9,6 +9,8 @@ export default function Home() {
     whatsapp: '',
     negocio: ''
   })
+  const [submitting, setSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState(null) // 'success' | 'error' | null
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [demoMessages, setDemoMessages] = useState([])
   const [demoAnimationComplete, setDemoAnimationComplete] = useState(false)
@@ -42,10 +44,32 @@ export default function Home() {
     })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log('Enviando:', formData)
-    alert('Gracias! Te contactaremos pronto.')
+    setSubmitting(true)
+    setSubmitStatus(null)
+    try {
+      const response = await fetch(
+        'https://n8n.molric.com/webhook/d4b8c178-75c8-4fce-8ef2-32ba6839cfee',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            nombre: formData.nombre,
+            whatsapp: formData.whatsapp,
+            negocio: formData.negocio,
+          }),
+        }
+      )
+      if (!response.ok) throw new Error(`HTTP ${response.status}`)
+      setSubmitStatus('success')
+      setFormData({ nombre: '', whatsapp: '', negocio: '' })
+    } catch (err) {
+      console.error('Error al enviar formulario:', err)
+      setSubmitStatus('error')
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   const closeMobileMenu = () => {
@@ -381,7 +405,19 @@ export default function Home() {
                 placeholder="Nombre de tu negocio"
               />
             </div>
-            <button className="form-submit" type="submit">Quiero mi agente</button>
+            <button className="form-submit" type="submit" disabled={submitting}>
+              {submitting ? 'Enviando…' : 'Quiero mi agente'}
+            </button>
+            {submitStatus === 'success' && (
+              <p style={{ marginTop: '16px', color: 'var(--accent)', textAlign: 'center', fontWeight: 600 }}>
+                ✅ ¡Recibido! Te contactaremos pronto.
+              </p>
+            )}
+            {submitStatus === 'error' && (
+              <p style={{ marginTop: '16px', color: '#ff6b6b', textAlign: 'center', fontWeight: 600 }}>
+                ❌ Ocurrió un error. Por favor intentá de nuevo.
+              </p>
+            )}
           </form>
         </div>
       </section>
