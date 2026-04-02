@@ -393,7 +393,7 @@ export default function Home() {
               />
             </div>
             <div className="form-group">
-              <label className="form-label" htmlFor="negocio">Negocio</label>
+              <label className="form-label" htmlFor="negocio">Rubro</label>
               <input
                 className="form-input"
                 type="text"
@@ -402,7 +402,7 @@ export default function Home() {
                 value={formData.negocio}
                 onChange={handleChange}
                 required
-                placeholder="Nombre de tu negocio"
+                placeholder="Ej: Inmobiliaria, Estética, Abogado..."
               />
             </div>
             <button className="form-submit" type="submit" disabled={submitting}>
