@@ -50,7 +50,7 @@ export default function Home() {
     setSubmitStatus(null)
     try {
       const response = await fetch(
-        'https://n8n.molric.com/webhook/d4b8c178-75c8-4fce-8ef2-32ba6839cfee',
+        'https://n8n.molric.com/webhook/d4b8c178-75c8-4fce-8ef2-32ba6839cfee/',
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
