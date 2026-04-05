@@ -7,7 +7,7 @@ export default function Home() {
   const [formData, setFormData] = useState({
     nombre: '',
     whatsapp: '',
-    negocio: ''
+    rubro: ''
   })
   const [submitting, setSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState(null) // 'success' | 'error' | null
@@ -57,13 +57,13 @@ export default function Home() {
           body: JSON.stringify({
             nombre: formData.nombre,
             whatsapp: formData.whatsapp,
-            negocio: formData.negocio,
+            rubro: formData.rubro,
           }),
         }
       )
       if (!response.ok) throw new Error(`HTTP ${response.status}`)
       setSubmitStatus('success')
-      setFormData({ nombre: '', whatsapp: '', negocio: '' })
+      setFormData({ nombre: '', whatsapp: '', rubro: '' })
     } catch (err) {
       console.error('Error al enviar formulario:', err)
       setSubmitStatus('error')
@@ -393,13 +393,13 @@ export default function Home() {
               />
             </div>
             <div className="form-group">
-              <label className="form-label" htmlFor="negocio">Rubro</label>
+              <label className="form-label" htmlFor="rubro">Rubro</label>
               <input
                 className="form-input"
                 type="text"
-                id="negocio"
-                name="negocio"
-                value={formData.negocio}
+                id="rubro"
+                name="rubro"
+                value={formData.rubro}
                 onChange={handleChange}
                 required
                 placeholder="Ej: Inmobiliaria, Estética, Abogado..."
