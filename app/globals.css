@@ -750,12 +750,15 @@ footer {
 /* RESPONSIVE */
 /* TABLET */
 @media (max-width: 900px) {
+  body {
+    font-size: 16px;
+  }
   nav { 
     padding: 16px 24px; 
     gap: 12px;
     justify-content: space-between;
   }
-  .nav-logo { font-size: 18px; }
+  .nav-logo { font-size: 20px; }
   .nav-links { 
     display: none; 
     flex: 0;
@@ -772,65 +775,68 @@ footer {
     margin-left: auto;
   }
   
-  section { padding: 64px 28px; }
-  #hero { padding: 80px 28px 40px; min-height: auto; }
-  .hero-headline { font-size: clamp(36px, 5vw, 56px); margin-bottom: 24px; }
-  .hero-tag { font-size: 9px; letter-spacing: 0.12em; white-space: nowrap; padding: 5px 12px; margin-bottom: 28px; }
-  .hero-sub { font-size: 14px; max-width: 480px; }
+  section { padding: 72px 32px; }
+  #hero { padding: 90px 32px 48px; min-height: auto; }
+  .hero-headline { font-size: clamp(40px, 6vw, 60px); margin-bottom: 24px; }
+  .hero-tag { font-size: 10px; letter-spacing: 0.12em; white-space: nowrap; padding: 6px 14px; margin-bottom: 28px; }
+  .hero-sub { font-size: 16px; max-width: 500px; }
   .hero-actions { gap: 12px; }
   
-  .section-title { font-size: clamp(28px, 4vw, 44px); }
-  .section-sub { font-size: 13px; }
+  .section-title { font-size: clamp(32px, 5vw, 48px); }
+  .section-sub { font-size: 15px; }
   
   #problem { grid-template-columns: 1fr; gap: 40px; }
-  .problem-item { padding: 16px; }
-  .problem-text strong { font-size: 13px; }
-  .problem-text p { font-size: 12px; }
-  .solution-card { padding: 24px; }
-  .solution-card h4 { font-size: 14px; }
-  .solution-card p { font-size: 12px; }
+  .problem-item { padding: 20px; }
+  .problem-text strong { font-size: 15px; }
+  .problem-text p { font-size: 13.5px; }
+  .solution-card { padding: 28px; }
+  .solution-card h4 { font-size: 16px; }
+  .solution-card p { font-size: 13.5px; }
   
   .steps::before { display: none; }
   .steps { grid-template-columns: 1fr; gap: 32px; }
   .step { padding: 0 16px; }
-  .step-circle { width: 56px; height: 56px; font-size: 18px; margin-bottom: 20px; }
-  .step h3 { font-size: 14px; margin-bottom: 10px; }
-  .step p { font-size: 12px; }
+  .step-circle { width: 60px; height: 60px; font-size: 19px; margin-bottom: 20px; }
+  .step h3 { font-size: 16px; margin-bottom: 10px; }
+  .step p { font-size: 13.5px; }
   
   .benefits-grid { grid-template-columns: 1fr; gap: 16px; }
-  .benefit-card { padding: 24px; }
-  .benefit-icon { font-size: 28px; }
-  .benefit-card h3 { font-size: 14px; margin-bottom: 10px; }
-  .benefit-card p { font-size: 12px; }
+  .benefit-card { padding: 28px; }
+  .benefit-icon { font-size: 32px; }
+  .benefit-card h3 { font-size: 16px; margin-bottom: 10px; }
+  .benefit-card p { font-size: 13.5px; }
   
-  .demo-card { max-width: 100%; padding: 32px 24px; min-height: 600px; max-height: none; }
-  .demo-card p { font-size: 12px; padding: 8px 12px; margin: 6px 0; }
-  .demo-caption { font-size: 11px; margin-top: 16px; }
+  .demo-card { max-width: 100%; padding: 36px 28px; min-height: 600px; max-height: none; }
+  .demo-card p { font-size: 13.5px; padding: 8px 12px; margin: 6px 0; }
+  .demo-caption { font-size: 12px; margin-top: 16px; }
   
   .form-container { max-width: 100%; padding: 0; }
   .form-group { margin-bottom: 20px; }
-  .form-label { font-size: 12px; margin-bottom: 6px; }
-  .form-input { font-size: 13px; padding: 14px; }
-  .form-submit { font-size: 11px; padding: 14px; }
+  .form-label { font-size: 13px; margin-bottom: 6px; }
+  .form-input { font-size: 14.5px; padding: 14px; }
+  .form-submit { font-size: 12.5px; padding: 14px; }
   
-  footer { padding: 40px 28px; flex-direction: column; align-items: flex-start; }
-  .footer-logo { font-size: 14px; }
-  .footer-links { flex-direction: column; gap: 12px; font-size: 12px; }
-  .footer-copy { font-size: 11px; width: 100%; order: 3; margin-top: 16px; }
+  footer { padding: 48px 32px; flex-direction: column; align-items: flex-start; }
+  .footer-logo { font-size: 16px; }
+  .footer-links { flex-direction: column; gap: 12px; font-size: 13px; }
+  .footer-copy { font-size: 12px; width: 100%; order: 3; margin-top: 16px; }
   
-  #cta { padding: 60px 28px; }
-  #cta .section-title { font-size: clamp(28px, 4vw, 44px); margin-bottom: 16px; }
+  #cta { padding: 72px 32px; }
+  #cta .section-title { font-size: clamp(32px, 5vw, 48px); margin-bottom: 16px; }
   .cta-actions { gap: 12px; padding: 0 0; }
 }
 
 /* SMARTPHONE */
 @media (max-width: 480px) {
+  body {
+    font-size: 16.5px;
+  }
   nav { 
     padding: 14px 20px; 
     gap: 8px;
     justify-content: space-between;
   }
-  .nav-logo { font-size: 18px; }
+  .nav-logo { font-size: 20px; }
   .nav-links { 
     display: none;
     flex: 0;
@@ -846,54 +852,54 @@ footer {
     margin-left: auto;
   }
   
-  section { padding: 56px 20px; }
-  #hero { padding: 70px 20px 40px; min-height: auto; }
-  .hero-headline { font-size: clamp(32px, 8vw, 44px); margin-bottom: 24px; line-height: 1.25; }
-  .hero-tag { font-size: 8.5px; letter-spacing: 0.05em; white-space: nowrap; padding: 5px 12px; margin-bottom: 20px; }
-  .hero-sub { font-size: 15px; max-width: 100%; margin-bottom: 40px; line-height: 1.7; }
+  section { padding: 64px 24px; }
+  #hero { padding: 80px 24px 44px; min-height: auto; }
+  .hero-headline { font-size: clamp(36px, 9vw, 48px); margin-bottom: 24px; line-height: 1.2; }
+  .hero-tag { font-size: 9.5px; letter-spacing: 0.05em; white-space: nowrap; padding: 6px 14px; margin-bottom: 20px; }
+  .hero-sub { font-size: 16.5px; max-width: 100%; margin-bottom: 40px; line-height: 1.75; }
   .hero-actions { flex-direction: column; }
-  .btn-primary, .btn-secondary { width: 100%; padding: 16px 24px; font-size: 13px; }
+  .btn-primary, .btn-secondary { width: 100%; padding: 18px 28px; font-size: 14px; }
   
-  .section-title { font-size: clamp(28px, 6.5vw, 40px); }
-  .section-sub { font-size: 14px; }
+  .section-title { font-size: clamp(30px, 7vw, 42px); }
+  .section-sub { font-size: 15.5px; }
   
   #problem { gap: 40px; }
-  .problem-item { padding: 18px; margin-bottom: 16px; }
-  .problem-text strong { font-size: 14px; margin-bottom: 6px; }
-  .problem-text p { font-size: 13px; }
-  .solution-card { padding: 24px; margin-bottom: 16px; }
-  .solution-card h4 { font-size: 15px; margin-bottom: 8px; }
-  .solution-card p { font-size: 13px; }
+  .problem-item { padding: 20px; margin-bottom: 16px; }
+  .problem-text strong { font-size: 16px; margin-bottom: 6px; }
+  .problem-text p { font-size: 14px; }
+  .solution-card { padding: 28px; margin-bottom: 16px; }
+  .solution-card h4 { font-size: 16.5px; margin-bottom: 8px; }
+  .solution-card p { font-size: 14px; }
   
   .steps { gap: 32px; }
   .step { padding: 0; }
-  .step-circle { width: 56px; height: 56px; font-size: 18px; margin-bottom: 20px; }
-  .step h3 { font-size: 15px; margin-bottom: 10px; }
-  .step p { font-size: 13px; }
+  .step-circle { width: 60px; height: 60px; font-size: 19px; margin-bottom: 20px; }
+  .step h3 { font-size: 16.5px; margin-bottom: 10px; }
+  .step p { font-size: 14px; }
   
-  .benefit-card { padding: 24px; margin-bottom: 16px; }
-  .benefit-icon { font-size: 28px; margin-bottom: 16px; }
-  .benefit-card h3 { font-size: 15px; margin-bottom: 10px; }
-  .benefit-card p { font-size: 13px; line-height: 1.6; }
+  .benefit-card { padding: 28px; margin-bottom: 16px; }
+  .benefit-icon { font-size: 32px; margin-bottom: 16px; }
+  .benefit-card h3 { font-size: 16.5px; margin-bottom: 10px; }
+  .benefit-card p { font-size: 14px; line-height: 1.65; }
   
-  .demo-card { padding: 24px 20px; min-height: 600px; max-height: none; }
-  .demo-card p { font-size: 13px; padding: 8px 12px; margin: 6px 0; line-height: 1.5; }
-  .demo-caption { font-size: 12px; margin-top: 16px; }
+  .demo-card { padding: 28px 24px; min-height: 600px; max-height: none; }
+  .demo-card p { font-size: 14px; padding: 8px 12px; margin: 6px 0; line-height: 1.55; }
+  .demo-caption { font-size: 13px; margin-top: 16px; }
   
   .form-container { max-width: 100%; }
   .form-group { margin-bottom: 20px; }
-  .form-label { font-size: 13px; margin-bottom: 8px; }
-  .form-input { font-size: 15px; padding: 14px; }
-  .form-submit { font-size: 13px; padding: 14px; font-weight: 600; }
+  .form-label { font-size: 14px; margin-bottom: 8px; }
+  .form-input { font-size: 16px; padding: 14px; }
+  .form-submit { font-size: 14px; padding: 16px; font-weight: 600; }
   
-  footer { padding: 40px 20px; gap: 20px; }
-  .footer-logo { font-size: 15px; }
-  .footer-links { flex-direction: column; gap: 12px; font-size: 13px; }
-  .footer-copy { font-size: 12px; margin-top: 16px; }
+  footer { padding: 48px 24px; gap: 24px; }
+  .footer-logo { font-size: 16px; }
+  .footer-links { flex-direction: column; gap: 12px; font-size: 14px; }
+  .footer-copy { font-size: 13px; margin-top: 16px; }
   
-  #cta { padding: 60px 20px; }
-  #cta .section-title { font-size: clamp(28px, 6vw, 40px); margin-bottom: 16px; }
-  #cta .section-sub { font-size: 14px; margin-bottom: 40px; }
+  #cta { padding: 72px 24px; }
+  #cta .section-title { font-size: clamp(30px, 7.5vw, 42px); margin-bottom: 16px; }
+  #cta .section-sub { font-size: 15px; margin-bottom: 40px; }
   .cta-actions { flex-direction: column; }
   .cta-actions a { width: 100%; }
 }
