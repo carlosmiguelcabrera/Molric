@@ -13,17 +13,12 @@ export default function HeroParticles() {
     let animationId
     let particles = []
 
-    // Read colors from CSS variables at runtime (respects theme changes)
-    const getColors = () => {
+    const getAccent = () => {
       const style = getComputedStyle(document.documentElement)
-      const accent = style.getPropertyValue('--accent').trim() || '#00e5ff'
-      const isLight = document.documentElement.getAttribute('data-theme') === 'light'
-      return { accent, isLight }
+      return style.getPropertyValue('--accent').trim() || '#6C5CE7'
     }
 
-    // Parse a hex/rgb color into r,g,b components
     const parseColor = (color) => {
-      // handle hex
       const hex = color.replace('#', '')
       if (hex.length === 6) {
         return {
@@ -32,13 +27,11 @@ export default function HeroParticles() {
           b: parseInt(hex.slice(4, 6), 16),
         }
       }
-      // handle rgb(...)
       const match = color.match(/\d+/g)
       if (match && match.length >= 3) {
         return { r: +match[0], g: +match[1], b: +match[2] }
       }
-      // fallback
-      return { r: 0, g: 229, b: 255 }
+      return { r: 108, g: 92, b: 231 }
     }
 
     const resize = () => {
@@ -68,12 +61,11 @@ export default function HeroParticles() {
     const draw = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
 
-      const { accent, isLight } = getColors()
+      const accent = getAccent()
       const { r, g, b } = parseColor(accent)
-      // In light mode boost opacity so particles are visible on a white background
-      const lineOpacity = isLight ? 0.18 : 0.07
-      const particleOpacityBase = isLight ? 0.55 : 0
-      const particleOpacityRange = isLight ? 0.2 : 1
+      const lineOpacity = 0.18
+      const particleOpacityBase = 0.55
+      const particleOpacityRange = 0.2
 
       // Draw connection lines
       for (let i = 0; i < particles.length; i++) {
@@ -96,10 +88,7 @@ export default function HeroParticles() {
       for (const p of particles) {
         ctx.beginPath()
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2)
-        // p.opacity is always in 0–1 range; in light mode we shift the base up
-        const opacity = isLight
-          ? particleOpacityBase + p.opacity * particleOpacityRange
-          : p.opacity
+        const opacity = particleOpacityBase + p.opacity * particleOpacityRange
         ctx.fillStyle = `rgba(${r},${g},${b},${opacity})`
         ctx.fill()
       }
