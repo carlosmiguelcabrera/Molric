@@ -3,37 +3,25 @@
 import { useState, useEffect } from 'react'
 import HeroParticles from './components/HeroParticles'
 
+const DEMO_MESSAGES = [
+  { role: 'client', text: '¿Hola, tenés zapatillas talle 42?' },
+  { role: 'agent',  text: '¡Hola! Mi nombre es Isabella. 👟 Sí, tenemos en talle 42. ¿Qué modelo te interesa, el Runner X o el Urban Pro?' },
+  { role: 'client', text: 'el Runner X, ¿cuánto sale?' },
+  { role: 'agent',  text: 'El Runner X talle 42 está en $389.990. ¿Querés que te lo reserve? Tenemos stock limitado.' },
+  { role: 'client', text: 'sí, lo quiero. te pago por transferencia' },
+  { role: 'agent',  text: 'Perfecto ✅ Te mando los datos de pago ahora. ¡Gracias por elegirnos!' },
+]
+
 export default function Home() {
   const [formData, setFormData] = useState({
     nombre: '',
     whatsapp: '',
-    negocio: ''
+    rubro: ''
   })
+  const [submitting, setSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState(null)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [demoMessages, setDemoMessages] = useState([])
-  const [demoAnimationComplete, setDemoAnimationComplete] = useState(false)
-  const [theme, setTheme] = useState('dark')
-
-  // Initialize theme from localStorage
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const savedTheme = localStorage.getItem('theme') || 'dark'
-      setTheme(savedTheme)
-      document.documentElement.setAttribute('data-theme', savedTheme)
-    }
-  }, [])
-
-  // Update theme when it changes
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      document.documentElement.setAttribute('data-theme', theme)
-      localStorage.setItem('theme', theme)
-    }
-  }, [theme])
-
-  const toggleTheme = () => {
-    setTheme(prevTheme => prevTheme === 'dark' ? 'light' : 'dark')
-  }
+  const [visibleCount, setVisibleCount] = useState(0)
 
   const handleChange = (e) => {
     setFormData({
@@ -42,10 +30,32 @@ export default function Home() {
     })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log('Enviando:', formData)
-    alert('Gracias! Te contactaremos pronto.')
+    setSubmitting(true)
+    setSubmitStatus(null)
+    try {
+      const response = await fetch(
+        'https://n8n.molric.com/webhook/d4b8c178-75c8-4fce-8ef2-32ba6839cfee',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            nombre: formData.nombre,
+            whatsapp: formData.whatsapp,
+            rubro: formData.rubro,
+          }),
+        }
+      )
+      if (!response.ok) throw new Error(`HTTP ${response.status}`)
+      setSubmitStatus('success')
+      setFormData({ nombre: '', whatsapp: '', rubro: '' })
+    } catch (err) {
+      console.error('Error al enviar formulario:', err)
+      setSubmitStatus('error')
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   const closeMobileMenu = () => {
@@ -69,7 +79,7 @@ export default function Home() {
     const demoElement = document.querySelector('#demo')
     const demoObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting && demoMessages.length === 0) {
+        if (entry.isIntersecting && visibleCount === 0) {
           // Inicia la animación de typing
           animateTyping()
           demoObserver.unobserve(entry.target)
@@ -84,75 +94,25 @@ export default function Home() {
     return () => {
       if (demoElement) demoObserver.unobserve(demoElement)
     }
-  }, [demoMessages.length, demoAnimationComplete])
+  }, [visibleCount])
 
   const animateTyping = async () => {
-    const messages = [
-      { role: 'client', text: '¿Hola, tenés zapatillas talle 42?' },
-      { delay: 600 },
-      { role: 'agent', text: '¡Hola! 👟 Sí, tenemos en talle 42. ¿Qué modelo te interesa, el Runner X o el Urban Pro?' },
-      { role: 'client', text: 'el Runner X, ¿cuánto sale?' },
-      { role: 'agent', text: 'El Runner X talle 42 está en $89.990. ¿Querés que te lo reserve? Tenemos stock limitado.' },
-      { role: 'client', text: 'sí, lo quiero. te pago por transferencia' },
-      { role: 'agent', text: 'Perfecto ✅ Te mando los datos de pago ahora. ¡Gracias por elegirnos!' },
-    ]
-
-    for (let msgIdx = 0; msgIdx < messages.length; msgIdx++) {
-      const message = messages[msgIdx]
-      if (message.delay) {
-        await new Promise((r) => setTimeout(r, message.delay))
-        continue
-      }
-
-      const text = message.text
-      let displayText = ''
-
-      for (let i = 0; i <= text.length; i++) {
-        displayText = text.substring(0, i)
-        setDemoMessages([...messages.slice(0, msgIdx).filter(m => m.role), { ...message, text: displayText }])
-        await new Promise((r) => setTimeout(r, 20))
-      }
-
-      setDemoMessages((prev) => prev.map(m => m === messages[msgIdx] ? { ...message, text: text } : m))
-      await new Promise((r) => setTimeout(r, 250))
+    for (let i = 1; i <= DEMO_MESSAGES.length; i++) {
+      await new Promise((r) => setTimeout(r, i === 1 ? 1000 : 2000))
+      setVisibleCount(i)
     }
-    setDemoAnimationComplete(true)
   }
 
   return (
     <div>
       {/* NAV */}
       <nav>
-        <a className="nav-logo" href="#">MOLRIC</a>
+        <a className="nav-logo" href="#" style={{ textTransform: 'lowercase' }}>molr<span style={{ color: 'var(--accent)' }}>i</span>c</a>
         <ul className="nav-links">
           <li><a href="#problem">Problema</a></li>
           <li><a href="#how">Proceso</a></li>
           <li><a href="#benefits">Beneficios</a></li>
         </ul>
-        <button
-          className="theme-toggle"
-          onClick={toggleTheme}
-          aria-label="Cambiar tema"
-          title={theme === 'dark' ? 'Modo claro' : 'Modo oscuro'}
-        >
-          {theme === 'dark' ? (
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <circle cx="12" cy="12" r="5"></circle>
-              <line x1="12" y1="1" x2="12" y2="3"></line>
-              <line x1="12" y1="21" x2="12" y2="23"></line>
-              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-              <line x1="1" y1="12" x2="3" y2="12"></line>
-              <line x1="21" y1="12" x2="23" y2="12"></line>
-              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-            </svg>
-          ) : (
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-            </svg>
-          )}
-        </button>
         <a className="nav-cta" href="#form">Contacto</a>
         <button
           className={`hamburger ${mobileMenuOpen ? 'active' : ''}`}
@@ -189,7 +149,7 @@ export default function Home() {
             Molric crea un agente en WhatsApp que habla como tu negocio y filtra oportunidades reales.
           </p>
           <div className="hero-actions">
-            <a className="btn-primary" href="https://wa.me/5491171407170?text=Hola,%20quiero%20saber%20más%20sobre%20Molric">Consultar por WhatsApp</a>
+            <a className="btn-primary" href="https://wa.me/5491178249449?text=Hola,%20quiero%20saber%20más%20sobre%20Molric">Consultar por WhatsApp</a>
           </div>
         </div>
       </section>
@@ -298,30 +258,41 @@ export default function Home() {
       <section id="demo">
         <span className="section-tag reveal">Ejemplo real</span>
         <h2 className="section-title reveal">Así atiende tu agente mientras vos hacés otra cosa.</h2>
-        <p className="section-sub reveal reveal-delay-1" style={{ margin: '0 auto 40px', textAlign: 'center' }}>Esta es <strong style={{ color: 'var(--accent)' }}>Sofía</strong>, el agente de una zapatería. Cada negocio tiene el suyo, con nombre y personalidad propia.</p>
+        <p className="section-sub reveal reveal-delay-1" style={{ margin: '0 auto 40px', textAlign: 'center' }}>Esta es <strong style={{ color: 'var(--accent)' }}>Isabella</strong>, el agente de una zapatería. Cada negocio tiene el suyo, con nombre y personalidad propia.</p>
         <div className="demo-card reveal reveal-delay-1">
-          <div style={{ textAlign: 'left', fontSize: '13px', lineHeight: '2.2' }}>
-            {demoMessages.map((msg, idx) => (
-              msg.role === 'client' ? (
-                <div key={idx}>
-                  <p className="demo-line-client">
-                    <strong style={{ color: 'var(--text-muted)' }}>Cliente:</strong> {msg.text}
-                  </p>
-                </div>
-              ) : msg.role === 'agent' ? (
-                <div key={idx}>
-                  <p className="demo-line-molric">
-                    <strong style={{ color: 'var(--accent)' }}>Sofía:</strong> {msg.text}
-                  </p>
-                </div>
-              ) : null
-            ))}
+          <div className="demo-chat-header">
+            <div className="demo-chat-header-avatar">U</div>
+            <div className="demo-chat-header-info">
+              <span className="demo-chat-header-name">Isabella - Urban Runner</span>
+              <span className="demo-chat-header-status">en línea</span>
+            </div>
           </div>
-          {demoAnimationComplete && (
-            <p className="demo-caption" style={{ fontSize: '12px', color: 'var(--text-muted)', marginTop: '20px', lineHeight: '1.6', fontStyle: 'italic' }}>
-              Sofía opera 24/7 con la información de la zapatería. Tu agente puede llamarse como quieras y hablar como habla tu marca.
-            </p>
-          )}
+          <div className="demo-messages" style={{ textAlign: 'left', fontSize: '13px' }}>
+            {DEMO_MESSAGES.map((msg, idx) => (
+              <div
+                key={idx}
+                className={`demo-msg-wrapper ${msg.role}`}
+                style={{
+                  opacity: idx < visibleCount ? 1 : 0,
+                  transform: idx < visibleCount ? 'translateY(0)' : 'translateY(8px)',
+                  transition: 'opacity 0.4s ease, transform 0.4s ease',
+                }}
+              >
+                <div className={`demo-bubble-group ${msg.role}`}>
+                  <span className="demo-sender-name">
+                    {msg.role === 'agent' ? 'Isabella' : 'Cliente'}
+                  </span>
+                  <p className={msg.role === 'client' ? 'demo-line-client' : 'demo-line-molric'}>
+                    {msg.text}
+                  </p>
+                </div>
+              </div>
+            ))}
+
+          </div>
+          <p className="demo-caption" style={{ fontSize: '12px', color: 'var(--text-muted)', marginTop: '20px', lineHeight: '1.6', fontStyle: 'italic', opacity: visibleCount === DEMO_MESSAGES.length ? 1 : 0, transition: 'opacity 0.6s ease' }}>
+            Isabella opera 24/7 con la información de la zapatería. Tu agente puede llamarse como quieras y hablar como habla tu marca.
+          </p>
         </div>
       </section>
 
@@ -369,26 +340,38 @@ export default function Home() {
               />
             </div>
             <div className="form-group">
-              <label className="form-label" htmlFor="negocio">Negocio</label>
+              <label className="form-label" htmlFor="rubro">Rubro</label>
               <input
                 className="form-input"
                 type="text"
-                id="negocio"
-                name="negocio"
-                value={formData.negocio}
+                id="rubro"
+                name="rubro"
+                value={formData.rubro}
                 onChange={handleChange}
                 required
-                placeholder="Nombre de tu negocio"
+                placeholder="Ej: Inmobiliaria, Estética, Abogado..."
               />
             </div>
-            <button className="form-submit" type="submit">Quiero mi agente</button>
+            <button className="form-submit" type="submit" disabled={submitting}>
+              {submitting ? 'Enviando…' : 'Quiero mi agente'}
+            </button>
+            {submitStatus === 'success' && (
+              <p style={{ marginTop: '16px', color: 'var(--accent)', textAlign: 'center', fontWeight: 600 }}>
+                ✅ ¡Recibido! Te contactaremos pronto.
+              </p>
+            )}
+            {submitStatus === 'error' && (
+              <p style={{ marginTop: '16px', color: '#ff6b6b', textAlign: 'center', fontWeight: 600 }}>
+                ❌ Ocurrió un error. Por favor intentá de nuevo.
+              </p>
+            )}
           </form>
         </div>
       </section>
 
       {/* FOOTER */}
       <footer>
-        <a className="footer-logo" href="#">MOLRIC</a>
+        <a className="footer-logo" href="#" style={{ textTransform: 'lowercase' }}>molr<span style={{ color: 'var(--accent)' }}>i</span>c</a>
         <ul className="footer-links">
           <li><a href="#problem">Problema</a></li>
           <li><a href="#how">Proceso</a></li>
@@ -400,7 +383,7 @@ export default function Home() {
 
       {/* Botón flotante WhatsApp */}
       <a
-        href="https://wa.me/5491171407170?text=Hola,%20quiero%20saber%20más%20sobre%20Molric"
+        href="https://wa.me/5491178249449?text=Hola,%20quiero%20saber%20más%20sobre%20Molric"
         style={{
           position: 'fixed',
           bottom: '20px',
