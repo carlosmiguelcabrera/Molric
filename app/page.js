@@ -141,15 +141,17 @@ export default function Home() {
         <div className="hero-content" style={{ position: 'relative', zIndex: 1 }}>
           <span className="hero-tag">WhatsApp · Automatización · Agente con nombre propio</span>
           <h1 className="hero-headline">
-            Respondé al instante,<br />
-            incluso cuando<br />
-            <em>no estás.</em>
+            Tu negocio, siempre activo.
           </h1>
+          <p className="hero-subheadline">
+            Tu negocio no debería depender de que estés mirando el teléfono.
+          </p>
           <p className="hero-sub">
-            Molric crea un agente en WhatsApp que habla como tu negocio y filtra oportunidades reales.
+            Molric crea un agente en WhatsApp que responde, califica y te avisa solo cuando hay alguien listo para comprar.
           </p>
           <div className="hero-actions">
-            <a className="btn-primary" href="https://wa.me/5491178249449?text=Hola,%20quiero%20saber%20más%20sobre%20Molric">Consultar por WhatsApp</a>
+            <a className="btn-primary" href="https://wa.me/5491178249449?text=Hola,%20quiero%20saber%20más%20sobre%20Molric">Quiero mi agente</a>
+            <a className="btn-secondary" href="#demo">Ver cómo funciona</a>
           </div>
         </div>
       </section>
@@ -158,28 +160,28 @@ export default function Home() {
       <section id="problem">
         <div className="reveal">
           <span className="section-tag">El problema</span>
-          <h2 className="section-title">Tu negocio puede estar perdiendo ventas por no responder a tiempo.</h2>
-          <p className="section-sub">Cada consulta que no respondés a tiempo es un cliente que se va con la competencia.</p>
+          <h2 className="section-title">El teléfono no debería ser lo que frena tu negocio.</h2>
+          <p className="section-sub">Cada vez que no podés responder a tiempo, alguien más lo hace por vos. Solo que ese alguien trabaja para la competencia.</p>
           <ul className="problem-list">
             <li className="problem-item">
               <span className="problem-icon">→</span>
               <div className="problem-text">
-                <strong>Respuestas tardías</strong>
-                <p>Te escriben y respondés horas después, cuando ya es tarde.</p>
+                <strong>Son las 11pm y llegó una consulta</strong>
+                <p>La respondés mañana. Para entonces, el cliente ya eligió.</p>
               </div>
             </li>
             <li className="problem-item">
               <span className="problem-icon">◆</span>
               <div className="problem-text">
-                <strong>Clientes perdidos</strong>
-                <p>Cuando contestás, el cliente ya compró en otro lado.</p>
+                <strong>Cada mensaje te interrumpe</strong>
+                <p>Estás en el medio de algo importante y el celular no para. Atendés vos o perdés la venta.</p>
               </div>
             </li>
             <li className="problem-item">
               <span className="problem-icon">§</span>
               <div className="problem-text">
-                <strong>Sin identidad propia</strong>
-                <p>Los bots genéricos no representan tu marca ni tu forma de hablar.</p>
+                <strong>Un bot genérico no te representa</strong>
+                <p>Tus clientes lo notan. Respuestas frías, sin personalidad, sin la identidad de tu negocio.</p>
               </div>
             </li>
           </ul>
@@ -187,10 +189,10 @@ export default function Home() {
         <div className="solution-right reveal reveal-delay-2">
           <span className="section-tag">La solución</span>
           <h2 className="section-title">Tu agente con nombre propio responde por vos.</h2>
-          <div className="solution-card">
-            <h4>Un agente, tu identidad</h4>
-            <p>Le ponés nombre, entrenás con la info de tu negocio y suena como vos. Tus clientes no hablan con un bot, hablan con tu agente.</p>
-          </div>
+            <div className="solution-card">
+              <h4>Un agente, tu identidad</h4>
+              <p>Le ponés nombre, lo entrenamos con la info de tu negocio y suena como vos. Tus clientes no hablan con un bot, hablan con tu agente.</p>
+            </div>
           <div className="solution-card">
             <h4>Menos estrés, más ventas</h4>
             <p>Tu agente filtra, responde y te avisa solo cuando hay una oportunidad real. Dejá de estar pegado al celular.</p>
@@ -300,17 +302,18 @@ export default function Home() {
       <section id="cta">
         <div className="cta-glow"></div>
         <span className="section-tag reveal">¿Querés tu propio agente?</span>
-        <h2 className="section-title reveal">Creá tu agente hoy<br /><em style={{ color: 'var(--accent)', fontStyle: 'normal' }}>y no pierdas más oportunidades.</em></h2>
-        <p className="section-sub reveal reveal-delay-1">Setup rápido, mantenimiento incluido. Tu agente funcionando en días, no semanas.</p>
+        <h2 className="section-title reveal">Tu negocio, siempre activo.<br /><em style={{ color: 'var(--accent)', fontStyle: 'normal' }}>Sin vos mirando el teléfono.</em></h2>
+        <p className="section-sub reveal reveal-delay-1">Setup en días, no semanas. Operación 100% gestionada. Vos solo entrás a cerrar las ventas.</p>
         <div className="cta-actions reveal reveal-delay-2">
-          <a className="btn-primary" href="#form">Quiero mi agente</a>
+          <a className="btn-primary" href="https://wa.me/5491178249449?text=Hola,%20quiero%20saber%20más%20sobre%20Molric">Quiero mi agente</a>
+          <a className="btn-secondary" href="#form">Prefiero que me contacten</a>
         </div>
       </section>
 
       {/* FORM */}
       <section id="form">
-        <span className="section-tag reveal">Contacto</span>
-        <h2 className="section-title reveal">Empezá a crear tu agente.</h2>
+        <span className="section-tag reveal" style={{ textAlign: 'center' }}>Contacto</span>
+        <h2 className="section-title reveal" style={{ textAlign: 'center' }}>Contanos de tu negocio.</h2>
         <div className="form-container reveal reveal-delay-1">
           <form onSubmit={handleSubmit}>
             <div className="form-group">
