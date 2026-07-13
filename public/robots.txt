@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# AI Crawlers
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+Sitemap: https://molric.com/sitemap.xml
