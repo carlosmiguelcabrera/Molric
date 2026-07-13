@@ -190,15 +190,15 @@ export default function Home() {
           <span className="section-tag">La solución</span>
           <h2 className="section-title">Tu agente con nombre propio responde por vos.</h2>
             <div className="solution-card">
-              <h4>Un agente, tu identidad</h4>
+              <h3>Un agente, tu identidad</h3>
               <p>Le ponés nombre, lo entrenamos con la info de tu negocio y suena como vos. Tus clientes no hablan con un bot, hablan con tu agente.</p>
             </div>
           <div className="solution-card">
-            <h4>Menos estrés, más ventas</h4>
+            <h3>Menos estrés, más ventas</h3>
             <p>Tu agente filtra, responde y te avisa solo cuando hay una oportunidad real. Dejá de estar pegado al celular.</p>
           </div>
           <div className="solution-card">
-            <h4>Todo ordenado</h4>
+            <h3>Todo ordenado</h3>
             <p>Consultas priorizadas, contactos guardados, historial completo gestionado por Molric.</p>
           </div>
         </div>
