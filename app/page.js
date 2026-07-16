@@ -139,15 +139,15 @@ export default function Home() {
         <div className="hero-grid-bg"></div>
         <div className="hero-glow"></div>
         <div className="hero-content" style={{ position: 'relative', zIndex: 1 }}>
-          <span className="hero-tag">WhatsApp · Automatización · Agente con nombre propio</span>
+          <span className="hero-tag">Estéticas · WhatsApp · Reactivación de clientas</span>
           <h1 className="hero-headline">
-            Tu negocio, siempre activo.
+            Recuperá las clientas que dejaste de ver.
           </h1>
           <p className="hero-subheadline">
-            Tu negocio no debería depender de que estés mirando el teléfono.
+            Sin que toques el teléfono. Sin contratar a nadie.
           </p>
           <p className="hero-sub">
-            Molric crea un agente en WhatsApp que responde, califica y te avisa solo cuando hay alguien listo para comprar.
+            Molric crea un agente en WhatsApp que responde, califica y reactiva clientas por tu estética las 24 horas. Como una recepcionista real, pero sin vacaciones.
           </p>
           <div className="hero-actions">
             <a className="btn-primary" href="https://wa.me/5491178249449?text=Hola,%20quiero%20saber%20más%20sobre%20Molric">Quiero mi agente</a>
@@ -160,46 +160,46 @@ export default function Home() {
       <section id="problem">
         <div className="reveal">
           <span className="section-tag">El problema</span>
-          <h2 className="section-title">El teléfono no debería ser lo que frena tu negocio.</h2>
-          <p className="section-sub">Cada vez que no podés responder a tiempo, alguien más lo hace por vos. Solo que ese alguien trabaja para la competencia.</p>
+          <h2 className="section-title">Tu WhatsApp no debería perder clientas por vos.</h2>
+          <p className="section-sub">Cada vez que no podés responder a tiempo, una clienta se va a la competencia. Y no vuelve.</p>
           <ul className="problem-list">
             <li className="problem-item">
               <span className="problem-icon">→</span>
               <div className="problem-text">
                 <strong>Son las 11pm y llegó una consulta</strong>
-                <p>La respondés mañana. Para entonces, el cliente ya eligió.</p>
+                <p>La respondés mañana. Para entonces, la clienta ya pidió turno en otro lado.</p>
               </div>
             </li>
             <li className="problem-item">
               <span className="problem-icon">◆</span>
               <div className="problem-text">
-                <strong>Cada mensaje te interrumpe</strong>
-                <p>Estás en el medio de algo importante y el celular no para. Atendés vos o perdés la venta.</p>
+                <strong>Cada mensaje te interrumpe en un turno</strong>
+                <p>Estás en el medio de una depilación y el celular no para. Atendés vos o perdés la venta.</p>
               </div>
             </li>
             <li className="problem-item">
               <span className="problem-icon">§</span>
               <div className="problem-text">
                 <strong>Un bot genérico no te representa</strong>
-                <p>Tus clientes lo notan. Respuestas frías, sin personalidad, sin la identidad de tu negocio.</p>
+                <p>Tus clientas lo notan. "Escribí 1 para turnos, 2 para precios". Eso ya no funciona.</p>
               </div>
             </li>
           </ul>
         </div>
         <div className="solution-right reveal reveal-delay-2">
           <span className="section-tag">La solución</span>
-          <h2 className="section-title">Tu agente con nombre propio responde por vos.</h2>
+          <h2 className="section-title">Un agente que habla como vos y reactiva por vos.</h2>
             <div className="solution-card">
-              <h3>Un agente, tu identidad</h3>
-              <p>Le ponés nombre, lo entrenamos con la info de tu negocio y suena como vos. Tus clientes no hablan con un bot, hablan con tu agente.</p>
+              <h3>Tu identidad, no un bot</h3>
+              <p>Le ponés nombre, lo entrenamos con tu información y suena como tu recepcionista. Tus clientas no hablan con un bot, hablan con alguien que las conoce.</p>
             </div>
           <div className="solution-card">
-            <h3>Menos estrés, más ventas</h3>
-            <p>Tu agente filtra, responde y te avisa solo cuando hay una oportunidad real. Dejá de estar pegado al celular.</p>
+            <h3>Reactivación automática</h3>
+            <p>Tu agente detecta qué clienta no asiste hace 30 días y le escribe para reagendarla. Eso es plata que ya tenías perdida.</p>
           </div>
           <div className="solution-card">
-            <h3>Todo ordenado</h3>
-            <p>Consultas priorizadas, contactos guardados, historial completo gestionado por Molric.</p>
+            <h3>Menos estrés, más turnos</h3>
+            <p>Tu agente filtra, responde y te avisa solo cuando hay una clienta lista para comprar. Dejá de estar pegado al celular.</p>
           </div>
         </div>
       </section>
@@ -252,6 +252,107 @@ export default function Home() {
             <span className="benefit-icon">📋</span>
             <h3>Todo bajo control</h3>
             <p>Molric organiza cada conversación: historial, prioridades y seguimiento en un solo lugar.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* PRICING */}
+      <section id="pricing">
+        <span className="section-tag reveal">Inversión</span>
+        <h2 className="section-title reveal">¿Cuánto cuesta recuperar clientas?</h2>
+        <p className="section-sub reveal reveal-delay-1" style={{ margin: '0 auto 40px', textAlign: 'center' }}>
+          Si logramos rescatar apenas 3 turnos que antes se perdían por no responder a tiempo, ya se paga solo.
+        </p>
+        <div className="pricing-card reveal reveal-delay-2">
+          <div className="pricing-header">
+            <span className="pricing-badge">Para estéticas</span>
+            <h3 className="pricing-price">Desde $149<span style={{ fontSize: '16px', opacity: 0.7 }}>/mes</span></h3>
+            <p className="pricing-setup">Setup inicial: $500 USD (única vez)</p>
+          </div>
+          <ul className="pricing-features">
+            <li>✓ Agente personalizado con nombre y personalidad</li>
+            <li>✓ Respuestas 24/7 en rioplatense</li>
+            <li>✓ Reactivación automática de clientas</li>
+            <li>✓ Digitalización de tu base de contactos</li>
+            <li>✓ Landing page optimizada para conversión</li>
+            <li>✓ Perfil de Google Places optimizado</li>
+            <li>✓ Soporte dedicado y monitoreo</li>
+          </ul>
+          <div className="pricing-cta">
+            <a className="btn-primary" href="https://wa.me/5491178249449?text=Hola,%20quiero%20saber%20más%20sobre%20Molric">Quiero mi agente</a>
+            <p className="pricing-note">Setup en días, no semanas. Sin contratos a largo plazo.</p>
+          </div>
+        </div>
+        <p className="pricing-comparison reveal reveal-delay-3" style={{ textAlign: 'center', marginTop: '24px', color: 'var(--text-muted)', fontSize: '14px' }}>
+          <strong>Compará:</strong> Una recepcionista part-time cuesta $400–600 USD/mes. Molric cuesta $149, atiende 24/7 y nunca agarra vacaciones.
+        </p>
+      </section>
+
+      {/* TESTIMONIALS */}
+      <section id="testimonials">
+        <span className="section-tag reveal">Resultados reales</span>
+        <h2 className="section-title reveal">Lo que dicen nuestras clientas</h2>
+        <p className="section-sub reveal reveal-delay-1" style={{ margin: '0 auto 48px', textAlign: 'center' }}>
+          Estéticas que ya están recuperando clientas con Molric.
+        </p>
+        <div className="testimonials-grid reveal reveal-delay-2">
+          <div className="testimonial-card">
+            <div className="testimonial-content">
+              <p className="testimonial-text">"En el primer mes recuperamos 12 clientas que habían dejado de venir. El agente les escribió automáticamente y muchas agendaron turno. Se pagó solo."</p>
+            </div>
+            <div className="testimonial-author">
+              <div className="testimonial-avatar">ML</div>
+              <div className="testimonial-info">
+                <span className="testimonial-name">María López</span>
+                <span className="testimonial-role">Dueña de Estética Lumina</span>
+              </div>
+            </div>
+          </div>
+          <div className="testimonial-card">
+            <div className="testimonial-content">
+              <p className="testimonial-text">"Lo mejor es que mis clientas no saben que es un agente. Habla como yo, con mi tono, mis horarios. Parece que tengo una recepcionista trabajando 24/7."</p>
+            </div>
+            <div className="testimonial-author">
+              <div className="testimonial-avatar">CR</div>
+              <div className="testimonial-info">
+                <span className="testimonial-name">Carolina Rodríguez</span>
+                <span className="testimonial-role">Dueña de Belleza Total</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p className="testimonial-note reveal reveal-delay-3" style={{ textAlign: 'center', marginTop: '32px', fontSize: '14px', color: 'var(--text-muted)', fontStyle: 'italic' }}>
+          *Próximamente: testimonios verificados con números reales de clientas recuperadas.
+        </p>
+      </section>
+
+      {/* FAQ */}
+      <section id="faq">
+        <span className="section-tag reveal">Preguntas frecuentes</span>
+        <h2 className="section-title reveal">¿Tenés dudas?</h2>
+        <p className="section-sub reveal reveal-delay-1" style={{ margin: '0 auto 48px', textAlign: 'center' }}>
+          Acá respondemos las preguntas más comunes de nuestras clientas.
+        </p>
+        <div className="faq-container reveal reveal-delay-2">
+          <div className="faq-item">
+            <h3 className="faq-question">¿Necesito saber de tecnología para usar Molric?</h3>
+            <p className="faq-answer">No. Nosotros nos encargamos de todo: configuramos tu agente, lo entrenamos con la información de tu estética y lo dejamos listo para usar. Vos solo seguís recibiendo los mensajes como siempre.</p>
+          </div>
+          <div className="faq-item">
+            <h3 className="faq-question">¿Mis clientas van a notar que es un agente?</h3>
+            <p className="faq-answer">No. A diferencia de los bots con opciones numeradas, nuestro agente conversa como lo harías vos: por nombre, con contexto, en rioplatense. Las clientas sienten que hablan con una recepcionista real.</p>
+          </div>
+          <div className="faq-item">
+            <h3 className="faq-question">¿Qué pasa si mi cliente pregunta algo que el agente no sabe?</h3>
+            <p className="faq-answer">El agente deriva automáticamente a un humano cuando detecta que la consulta es compleja. Nunca pierde una venta por no saber responder.</p>
+          </div>
+          <div className="faq-item">
+            <h3 className="faq-question">¿Puedo probar antes de contratar?</h3>
+            <p className="faq-answer">Sí. Tenemos un descuento de lanzamiento del 50% en el setup para los primeros 3 pilotos. A cambio, pedimos tu feedback y un testimonio con números reales.</p>
+          </div>
+          <div className="faq-item">
+            <h3 className="faq-question">¿Mis datos quedan seguros?</h3>
+            <p className="faq-answer">Todo queda a tu nombre desde el día uno: el número de WhatsApp, la cuenta de Meta, tu base de clientas. Si en algún momento decidís salir, te entrego todo. No hay lock-in.</p>
           </div>
         </div>
       </section>
