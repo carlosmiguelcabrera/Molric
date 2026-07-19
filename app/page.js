@@ -295,7 +295,7 @@ export default function Home() {
           <div className="benefit-card reveal reveal-delay-1">
             <span className="benefit-icon">🎯</span>
             <h3>No es un bot, es una recepcionista</h3>
-            <p>Habla en rioplatense, entiende contexto y se siente como una persona real. Tus clientas no notan la diferencia.</p>
+            <p>Habla de forma natural, entiende contexto y se siente como una persona real. Tus clientas no notan la diferencia.</p>
           </div>
           <div className="benefit-card reveal reveal-delay-2">
             <span className="benefit-icon">💰</span>
@@ -325,7 +325,7 @@ export default function Home() {
           </div>
           <ul className="pricing-features">
             <li>✓ Agente personalizado con nombre y personalidad</li>
-            <li>✓ Respuestas 24/7 en rioplatense</li>
+            <li>✓ Respuestas 24/7 de forma natural</li>
             <li>✓ Reactivación automática de clientas</li>
             <li>✓ Digitalización de tu base de contactos</li>
             <li>✓ Soporte dedicado y monitoreo</li>
@@ -400,7 +400,7 @@ export default function Home() {
           </div>
           <div className="faq-item">
             <h3 className="faq-question">¿Mis clientas van a notar que es un agente?</h3>
-            <p className="faq-answer">No. A diferencia de los bots con opciones numeradas, nuestro agente conversa como lo harías vos: por nombre, con contexto, en rioplatense. Las clientas sienten que hablan con una recepcionista real.</p>
+            <p className="faq-answer">No. A diferencia de los bots con opciones numeradas, nuestro agente conversa como lo harías vos: por nombre, con contexto, como una persona de verdad. Las clientas sienten que hablan con una recepcionista real.</p>
           </div>
           <div className="faq-item">
             <h3 className="faq-question">¿Qué pasa si mi cliente pregunta algo que el agente no sabe?</h3>

@@ -172,7 +172,7 @@ export default function RootLayout({ children }) {
         name: '¿Mis clientas van a notar que es un agente?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'No. A diferencia de los bots con opciones numeradas, nuestro agente conversa como lo harías vos: por nombre, con contexto, en rioplatense. Las clientas sienten que hablan con una recepcionista real.',
+          text: 'No. A diferencia de los bots con opciones numeradas, nuestro agente conversa como lo harías vos: por nombre, con contexto, como una persona de verdad. Las clientas sienten que hablan con una recepcionista real.',
         },
       },
       {
