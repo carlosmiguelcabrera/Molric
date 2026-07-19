@@ -220,7 +220,7 @@ export default function Home() {
       {/* DEMO - Moved up for social proof */}
       <section id="demo" aria-label="Demostración del agente">
         <span className="section-tag">Ejemplo real</span>
-        <h2 className="section-title">Así atiende tu agente mientras vos estás en un turno.</h2>
+        <h2 className="section-title">Así atiende tu agente mientras vos estás con un cliente.</h2>
         <p className="section-sub" style={{ margin: '0 auto 40px', textAlign: 'center' }}>Esta es <strong style={{ color: 'var(--accent)' }}>Camila</strong>, el agente de una estética. Cada negocio tiene la suya, con nombre y personalidad propia.</p>
         <div className="demo-card">
           <div className="demo-chat-header">
