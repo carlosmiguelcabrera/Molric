@@ -1,4 +1,17 @@
+import { Inter, Plus_Jakarta_Sans } from 'next/font/google'
 import './globals.css'
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-mono',
+  display: 'swap',
+})
+
+const plusJakarta = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+  variable: '--font-display',
+  display: 'swap',
+})
 
 const SITE_URL = 'https://molric.com'
 
@@ -91,6 +104,13 @@ export default function RootLayout({ children }) {
       name: 'Argentina',
     },
     serviceType: 'Agente de WhatsApp con IA',
+    hasGuarantee: {
+      '@type': 'Offer',
+      name: 'Garantía de 10 Turnos',
+      description: 'Si durante los primeros 30 días de funcionamiento tu agente no logra agendar al menos 10 turnos reales, te devolvemos el 100% de la tarifa de setup.',
+      price: '0',
+      priceCurrency: 'USD',
+    },
     offers: {
       '@type': 'Offer',
       price: '149',
@@ -168,7 +188,7 @@ export default function RootLayout({ children }) {
         name: '¿Puedo probar antes de contratar?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Sí. Tenemos un descuento de lanzamiento del 50% en el setup para los primeros 3 pilotos. A cambio, pedimos tu feedback y un testimonio con números reales.',
+          text: 'Sí. Hacemos una demo personalizada con la información de tu estética para que veas cómo funciona antes de comprometerte. Sin compromiso, sin tarjeta.',
         },
       },
       {
@@ -183,7 +203,7 @@ export default function RootLayout({ children }) {
   }
 
   return (
-    <html lang="es">
+    <html lang="es" className={`${inter.variable} ${plusJakarta.variable}`}>
       <head>
         <script
           type="application/ld+json"

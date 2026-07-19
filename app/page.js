@@ -4,12 +4,12 @@ import { useState, useEffect } from 'react'
 import HeroParticles from './components/HeroParticles'
 
 const DEMO_MESSAGES = [
-  { role: 'client', text: '¿Hola, tenés zapatillas talle 42?' },
-  { role: 'agent',  text: '¡Hola! Mi nombre es Isabella. 👟 Sí, tenemos en talle 42. ¿Qué modelo te interesa, el Runner X o el Urban Pro?' },
-  { role: 'client', text: 'el Runner X, ¿cuánto sale?' },
-  { role: 'agent',  text: 'El Runner X talle 42 está en $389.990. ¿Querés que te lo reserve? Tenemos stock limitado.' },
-  { role: 'client', text: 'sí, lo quiero. te pago por transferencia' },
-  { role: 'agent',  text: 'Perfecto ✅ Te mando los datos de pago ahora. ¡Gracias por elegirnos!' },
+  { role: 'client', text: 'Hola, ¿tienen lugar para una depilación láser el sábado?' },
+  { role: 'agent',  text: '¡Hola Marta! 🌸 Sí, tenemos disponibilidad el sábado a las 10hs o a las 15hs. ¿Qué horario te conviene más?' },
+  { role: 'client', text: 'a las 15 está bien, ¿cuánto sale la sesiones?' },
+  { role: 'agent',  text: 'La sesión de depilación láser de axilas está en $18.000. ¿Querés que te agende? Tenemos un 10% de descuento si pagás el pack de 4 sesiones.' },
+  { role: 'client', text: 'sí, agendame. ¿puedo pagar por transferencia?' },
+  { role: 'agent',  text: 'Perfecto ✅ Te agendé para el sábado a las 15hs. Te mando los datos de pago por aquí. ¡Nos vemos!' },
 ]
 
 export default function Home() {
@@ -22,6 +22,11 @@ export default function Home() {
   const [submitStatus, setSubmitStatus] = useState(null)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [visibleCount, setVisibleCount] = useState(0)
+
+  useEffect(() => {
+    const timer = setTimeout(() => setVisibleCount(1), 100)
+    return () => clearTimeout(timer)
+  }, [])
 
   const handleChange = (e) => {
     setFormData({
@@ -74,13 +79,11 @@ export default function Home() {
     reveals.forEach((el) => observer.observe(el))
   }, [])
 
-  // Typing animation para demo
   useEffect(() => {
     const demoElement = document.querySelector('#demo')
     const demoObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting && visibleCount === 0) {
-          // Inicia la animación de typing
+        if (entry.isIntersecting && visibleCount <= 1) {
           animateTyping()
           demoObserver.unobserve(entry.target)
         }
@@ -96,9 +99,19 @@ export default function Home() {
     }
   }, [visibleCount])
 
+  useEffect(() => {
+    if (visibleCount >= 5) {
+      const container = document.querySelector('.demo-messages')
+      if (container) {
+        container.scrollTop = container.scrollHeight
+      }
+    }
+  }, [visibleCount])
+
   const animateTyping = async () => {
-    for (let i = 1; i <= DEMO_MESSAGES.length; i++) {
-      await new Promise((r) => setTimeout(r, i === 1 ? 1000 : 2000))
+    setVisibleCount(1)
+    for (let i = 2; i <= DEMO_MESSAGES.length; i++) {
+      await new Promise((r) => setTimeout(r, 2000))
       setVisibleCount(i)
     }
   }
@@ -110,8 +123,8 @@ export default function Home() {
         <a className="nav-logo" href="#" style={{ textTransform: 'lowercase' }}>molr<span style={{ color: 'var(--accent)' }}>i</span>c</a>
         <ul className="nav-links">
           <li><a href="#problem">Problema</a></li>
-          <li><a href="#how">Proceso</a></li>
-          <li><a href="#benefits">Beneficios</a></li>
+          <li><a href="#demo">Demo</a></li>
+          <li><a href="#pricing">Precios</a></li>
         </ul>
         <a className="nav-cta" href="#form">Contacto</a>
         <button
@@ -128,13 +141,13 @@ export default function Home() {
       {/* MOBILE MENU */}
       <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
         <a href="#problem" onClick={closeMobileMenu}>Problema</a>
-        <a href="#how" onClick={closeMobileMenu}>Proceso</a>
-        <a href="#benefits" onClick={closeMobileMenu}>Beneficios</a>
+        <a href="#demo" onClick={closeMobileMenu}>Demo</a>
+        <a href="#pricing" onClick={closeMobileMenu}>Precios</a>
         <a href="#form" onClick={closeMobileMenu}>Contacto</a>
       </div>
 
       {/* HERO */}
-      <section id="hero">
+      <section id="hero" aria-label="Presentación principal">
         <HeroParticles />
         <div className="hero-grid-bg"></div>
         <div className="hero-glow"></div>
@@ -156,8 +169,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PROBLEM / SOLUTION */}
-      <section id="problem">
+      {/* PROBLEM + SOLUTION */}
+      <section id="problem" aria-label="Problema y solución">
         <div className="reveal">
           <span className="section-tag">El problema</span>
           <h2 className="section-title">Tu WhatsApp no debería perder clientas por vos.</h2>
@@ -204,60 +217,101 @@ export default function Home() {
         </div>
       </section>
 
+      {/* DEMO - Moved up for social proof */}
+      <section id="demo" aria-label="Demostración del agente">
+        <span className="section-tag">Ejemplo real</span>
+        <h2 className="section-title">Así atiende tu agente mientras vos estás en un turno.</h2>
+        <p className="section-sub" style={{ margin: '0 auto 40px', textAlign: 'center' }}>Esta es <strong style={{ color: 'var(--accent)' }}>Camila</strong>, el agente de una estética. Cada negocio tiene la suya, con nombre y personalidad propia.</p>
+        <div className="demo-card">
+          <div className="demo-chat-header">
+            <div className="demo-chat-header-avatar">C</div>
+            <div className="demo-chat-header-info">
+              <span className="demo-chat-header-name">Camila - Estética Lumina</span>
+              <span className="demo-chat-header-status">en línea</span>
+            </div>
+          </div>
+          <div className="demo-messages" style={{ textAlign: 'left', fontSize: '13px' }}>
+            {DEMO_MESSAGES.map((msg, idx) => (
+              <div
+                key={idx}
+                className={`demo-msg-wrapper ${msg.role}`}
+                style={{
+                  opacity: idx < visibleCount ? 1 : 0,
+                  transform: idx < visibleCount ? 'translateY(0)' : 'translateY(8px)',
+                  transition: 'opacity 0.4s ease, transform 0.4s ease',
+                }}
+              >
+                <div className={`demo-bubble-group ${msg.role}`}>
+                  <span className="demo-sender-name">
+                    {msg.role === 'agent' ? 'Camila' : 'Marta'}
+                  </span>
+                  <p className={msg.role === 'client' ? 'demo-line-client' : 'demo-line-molric'}>
+                    {msg.text}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <p className="demo-caption" style={{ fontSize: '14px', color: 'var(--text-muted)', marginTop: '24px', maxWidth: '600px', margin: '24px auto 0', lineHeight: '1.6', fontStyle: 'italic', opacity: visibleCount === DEMO_MESSAGES.length ? 1 : 0, transition: 'opacity 0.6s ease' }}>
+          Camila atiende 24/7 con la información de la estética. Tu agente puede llamarse como quieras y hablar como habla tu marca.
+        </p>
+      </section>
+
       {/* HOW IT WORKS */}
-      <section id="how">
+      <section id="how" aria-label="Cómo funciona">
         <span className="section-tag reveal">Proceso</span>
         <h2 className="section-title reveal">Tres pasos simples.</h2>
         <p className="section-sub reveal reveal-delay-1">Instalación rápida, resultados inmediatos.</p>
         <div className="steps">
           <div className="step reveal">
             <div className="step-circle">01</div>
-            <h3>El cliente escribe</h3>
-            <p>Tu cliente manda un mensaje a tu WhatsApp, como siempre.</p>
+            <h3>Vos nos contás de tu estética</h3>
+            <p>Nos cuentas sobre tus servicios, horarios y precios. Nosotros nos encargamos del resto.</p>
           </div>
           <div className="step reveal reveal-delay-1">
             <div className="step-circle">02</div>
-            <h3>Tu agente responde</h3>
-            <p>Tu agente —con nombre y tono propio— contesta al instante con la info de tu negocio.</p>
+            <h3>Creamos tu agente</h3>
+            <p>Configuramos un agente con el nombre y personalidad que vos elijas, entrenado con tu información.</p>
           </div>
           <div className="step reveal reveal-delay-2">
             <div className="step-circle">03</div>
-            <h3>Vos cerrás la venta</h3>
-            <p>Molric te notifica solo cuando hay un cliente listo para comprar. Vos entrás a cerrar.</p>
+            <h3>Tu agente empieza a atender</h3>
+            <p>En pocos días, tu agente está respondiendo 24/7 y vos solo recibís las notificaciones de clientas listas para agendar.</p>
           </div>
         </div>
       </section>
 
       {/* BENEFITS */}
-      <section id="benefits">
+      <section id="benefits" aria-label="Beneficios">
         <span className="section-tag reveal">Beneficios</span>
         <h2 className="section-title reveal">Lo que vas a lograr.</h2>
         <div className="benefits-grid">
           <div className="benefit-card reveal">
             <span className="benefit-icon">⚡</span>
-            <h3>Respuestas al instante</h3>
-            <p>Tu agente contesta en segundos, las 24 horas. Ninguna consulta queda sin respuesta.</p>
+            <h3>Reactivación proactiva</h3>
+            <p>Tu agente detecta qué clienta no asiste hace 30 días y le escribe para reagendarla. Eso es plata que ya tenías perdida.</p>
           </div>
           <div className="benefit-card reveal reveal-delay-1">
             <span className="benefit-icon">🎯</span>
-            <h3>Solo leads calificados</h3>
-            <p>Tu agente filtra y califica. Vos solo recibís los que ya quieren comprar.</p>
+            <h3>No es un bot, es una recepcionista</h3>
+            <p>Habla en rioplatense, entiende contexto y se siente como una persona real. Tus clientas no notan la diferencia.</p>
           </div>
           <div className="benefit-card reveal reveal-delay-2">
-            <span className="benefit-icon">🪪</span>
-            <h3>Identidad de marca</h3>
-            <p>Tu agente tiene nombre, personalidad y habla como tu negocio. No como un bot genérico.</p>
+            <span className="benefit-icon">💰</span>
+            <h3>Más barato que una empleada</h3>
+            <p>Una recepcionista part-time cuesta $400–600 USD/mes. Molric cuesta $149, atiende 24/7 y nunca agarra vacaciones.</p>
           </div>
           <div className="benefit-card reveal reveal-delay-3">
-            <span className="benefit-icon">📋</span>
-            <h3>Todo bajo control</h3>
-            <p>Molric organiza cada conversación: historial, prioridades y seguimiento en un solo lugar.</p>
+            <span className="benefit-icon">🌙</span>
+            <h3>Tu teléfono deja de sonar</h3>
+            <p>El agente atiende mientras estás en un turno, mientras dormís, o un domingo de sol. Vos dejás de estar atado al celular.</p>
           </div>
         </div>
       </section>
 
-      {/* PRICING */}
-      <section id="pricing">
+      {/* PRICING - Optimized with anchoring */}
+      <section id="pricing" aria-label="Precios">
         <span className="section-tag reveal">Inversión</span>
         <h2 className="section-title reveal">¿Cuánto cuesta recuperar clientas?</h2>
         <p className="section-sub reveal reveal-delay-1" style={{ margin: '0 auto 40px', textAlign: 'center' }}>
@@ -266,7 +320,7 @@ export default function Home() {
         <div className="pricing-card reveal reveal-delay-2">
           <div className="pricing-header">
             <span className="pricing-badge">Para estéticas</span>
-            <h3 className="pricing-price">Desde $149<span style={{ fontSize: '16px', opacity: 0.7 }}>/mes</span></h3>
+            <h3 className="pricing-price">Desde $149 USD<span style={{ fontSize: '16px', opacity: 0.7 }}>/mes</span></h3>
             <p className="pricing-setup">Setup inicial: $500 USD (única vez)</p>
           </div>
           <ul className="pricing-features">
@@ -274,9 +328,8 @@ export default function Home() {
             <li>✓ Respuestas 24/7 en rioplatense</li>
             <li>✓ Reactivación automática de clientas</li>
             <li>✓ Digitalización de tu base de contactos</li>
-            <li>✓ Landing page optimizada para conversión</li>
-            <li>✓ Perfil de Google Places optimizado</li>
             <li>✓ Soporte dedicado y monitoreo</li>
+            <li>🛡️ <strong>Garantía de 10 turnos:</strong> Si el primer mes no logramos al menos 10 turnos agendados, te devolvemos el valor del setup.</li>
           </ul>
           <div className="pricing-cta">
             <a className="btn-primary" href="https://wa.me/5491178249449?text=Hola,%20quiero%20saber%20más%20sobre%20Molric">Quiero mi agente</a>
@@ -284,50 +337,57 @@ export default function Home() {
           </div>
         </div>
         <p className="pricing-comparison reveal reveal-delay-3" style={{ textAlign: 'center', marginTop: '24px', color: 'var(--text-muted)', fontSize: '14px' }}>
-          <strong>Compará:</strong> Una recepcionista part-time cuesta $400–600 USD/mes. Molric cuesta $149, atiende 24/7 y nunca agarra vacaciones.
+          <strong>Compará:</strong> Una recepcionista part-time cuesta $400–600 USD/mes. Molric cuesta $149 USD, atiende 24/7 y nunca agarra vacaciones.
         </p>
       </section>
 
-      {/* TESTIMONIALS */}
-      <section id="testimonials">
-        <span className="section-tag reveal">Resultados reales</span>
-        <h2 className="section-title reveal">Lo que dicen nuestras clientas</h2>
-        <p className="section-sub reveal reveal-delay-1" style={{ margin: '0 auto 48px', textAlign: 'center' }}>
-          Estéticas que ya están recuperando clientas con Molric.
-        </p>
-        <div className="testimonials-grid reveal reveal-delay-2">
-          <div className="testimonial-card">
-            <div className="testimonial-content">
-              <p className="testimonial-text">"En el primer mes recuperamos 12 clientas que habían dejado de venir. El agente les escribió automáticamente y muchas agendaron turno. Se pagó solo."</p>
+      {/* ROI ANCHOR */}
+      <section id="roi" aria-label="Cálculo de retorno de inversión" style={{ background: 'var(--accent-dim)', borderRadius: '16px', padding: '64px 40px', margin: '0 auto', maxWidth: '800px' }}>
+        <div style={{ textAlign: 'center' }}>
+          <span className="section-tag reveal">El cálculo es simple</span>
+          <h2 className="section-title reveal" style={{ fontSize: '32px' }}>3 turnos recuperados = $149 recuperados.</h2>
+          <p className="section-sub reveal reveal-delay-1" style={{ margin: '0 auto 32px', maxWidth: '600px' }}>
+            Si tu ticket promedio es de $50 USD, con rescatar <strong>3 clientas</strong> que dejaron de venir, el servicio se paga solo. Lo que venga después es ganancia pura.
+          </p>
+          <div className="reveal reveal-delay-2" style={{ display: 'flex', justifyContent: 'center', gap: '48px', flexWrap: 'wrap' }}>
+            <div style={{ textAlign: 'center' }}>
+              <div style={{ fontSize: '48px', fontWeight: 800, color: 'var(--accent)', fontFamily: 'var(--font-display)' }}>3</div>
+              <div style={{ fontSize: '14px', color: 'var(--text-muted)' }}>turnos para pagar el mes</div>
             </div>
-            <div className="testimonial-author">
-              <div className="testimonial-avatar">ML</div>
-              <div className="testimonial-info">
-                <span className="testimonial-name">María López</span>
-                <span className="testimonial-role">Dueña de Estética Lumina</span>
-              </div>
+            <div style={{ textAlign: 'center' }}>
+              <div style={{ fontSize: '48px', fontWeight: 800, color: 'var(--accent)', fontFamily: 'var(--font-display)' }}>$149</div>
+              <div style={{ fontSize: '14px', color: 'var(--text-muted)' }}>USD/mes</div>
             </div>
-          </div>
-          <div className="testimonial-card">
-            <div className="testimonial-content">
-              <p className="testimonial-text">"Lo mejor es que mis clientas no saben que es un agente. Habla como yo, con mi tono, mis horarios. Parece que tengo una recepcionista trabajando 24/7."</p>
-            </div>
-            <div className="testimonial-author">
-              <div className="testimonial-avatar">CR</div>
-              <div className="testimonial-info">
-                <span className="testimonial-name">Carolina Rodríguez</span>
-                <span className="testimonial-role">Dueña de Belleza Total</span>
-              </div>
+            <div style={{ textAlign: 'center' }}>
+              <div style={{ fontSize: '48px', fontWeight: 800, color: 'var(--accent)', fontFamily: 'var(--font-display)' }}>24/7</div>
+              <div style={{ fontSize: '14px', color: 'var(--text-muted)' }}>siempre atendiendo</div>
             </div>
           </div>
         </div>
-        <p className="testimonial-note reveal reveal-delay-3" style={{ textAlign: 'center', marginTop: '32px', fontSize: '14px', color: 'var(--text-muted)', fontStyle: 'italic' }}>
-          *Próximamente: testimonios verificados con números reales de clientas recuperadas.
-        </p>
+      </section>
+
+      {/* QUALITY ASSURANCE & GUARANTEE */}
+      <section id="guarantee" aria-label="Garantía de servicio" style={{ padding: '80px 24px', textAlign: 'center' }}>
+        <div className="reveal" style={{ maxWidth: '700px', margin: '0 auto' }}>
+          <span className="section-tag">Nuestra Garantía</span>
+          <h2 className="section-title">Probá sin riesgo.</h2>
+          <p className="section-sub" style={{ marginBottom: '32px' }}>
+            Queremos que la decisión sea fácil para vos. Por eso respaldamos nuestro servicio con una garantía de resultados clara.
+          </p>
+          <div style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: '16px', padding: '32px', textAlign: 'left', display: 'flex', gap: '24px', alignItems: 'flex-start', boxShadow: '0 4px 20px rgba(13,13,15,0.03)' }}>
+            <span style={{ fontSize: '32px', lineHeight: 1 }}>🛡️</span>
+            <div>
+              <h3 style={{ fontSize: '18px', fontWeight: 700, marginBottom: '8px', color: 'var(--text)', fontFamily: 'var(--font-display)' }}>Compromiso de 10 Turnos Garantizados</h3>
+              <p style={{ fontSize: '14.5px', color: 'var(--text-muted)', lineHeight: '1.6' }}>
+                Si durante los primeros 30 días de funcionamiento tu agente personalizado de WhatsApp no logra agendar al menos <strong>10 turnos reales</strong> para tu estética, te devolvemos el 100% de la tarifa de setup de manera inmediata. Sin preguntas, sin vueltas.
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* FAQ */}
-      <section id="faq">
+      <section id="faq" aria-label="Preguntas frecuentes">
         <span className="section-tag reveal">Preguntas frecuentes</span>
         <h2 className="section-title reveal">¿Tenés dudas?</h2>
         <p className="section-sub reveal reveal-delay-1" style={{ margin: '0 auto 48px', textAlign: 'center' }}>
@@ -348,7 +408,7 @@ export default function Home() {
           </div>
           <div className="faq-item">
             <h3 className="faq-question">¿Puedo probar antes de contratar?</h3>
-            <p className="faq-answer">Sí. Tenemos un descuento de lanzamiento del 50% en el setup para los primeros 3 pilotos. A cambio, pedimos tu feedback y un testimonio con números reales.</p>
+            <p className="faq-answer">Sí. Hacemos una demo personalizada con la información de tu estética para que veas cómo funciona antes de comprometerte. Sin compromiso, sin tarjeta.</p>
           </div>
           <div className="faq-item">
             <h3 className="faq-question">¿Mis datos quedan seguros?</h3>
@@ -357,50 +417,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* DEMO */}
-      <section id="demo">
-        <span className="section-tag reveal">Ejemplo real</span>
-        <h2 className="section-title reveal">Así atiende tu agente mientras vos hacés otra cosa.</h2>
-        <p className="section-sub reveal reveal-delay-1" style={{ margin: '0 auto 40px', textAlign: 'center' }}>Esta es <strong style={{ color: 'var(--accent)' }}>Isabella</strong>, el agente de una zapatería. Cada negocio tiene el suyo, con nombre y personalidad propia.</p>
-        <div className="demo-card reveal reveal-delay-1">
-          <div className="demo-chat-header">
-            <div className="demo-chat-header-avatar">U</div>
-            <div className="demo-chat-header-info">
-              <span className="demo-chat-header-name">Isabella - Urban Runner</span>
-              <span className="demo-chat-header-status">en línea</span>
-            </div>
-          </div>
-          <div className="demo-messages" style={{ textAlign: 'left', fontSize: '13px' }}>
-            {DEMO_MESSAGES.map((msg, idx) => (
-              <div
-                key={idx}
-                className={`demo-msg-wrapper ${msg.role}`}
-                style={{
-                  opacity: idx < visibleCount ? 1 : 0,
-                  transform: idx < visibleCount ? 'translateY(0)' : 'translateY(8px)',
-                  transition: 'opacity 0.4s ease, transform 0.4s ease',
-                }}
-              >
-                <div className={`demo-bubble-group ${msg.role}`}>
-                  <span className="demo-sender-name">
-                    {msg.role === 'agent' ? 'Isabella' : 'Cliente'}
-                  </span>
-                  <p className={msg.role === 'client' ? 'demo-line-client' : 'demo-line-molric'}>
-                    {msg.text}
-                  </p>
-                </div>
-              </div>
-            ))}
-
-          </div>
-          <p className="demo-caption" style={{ fontSize: '12px', color: 'var(--text-muted)', marginTop: '20px', lineHeight: '1.6', fontStyle: 'italic', opacity: visibleCount === DEMO_MESSAGES.length ? 1 : 0, transition: 'opacity 0.6s ease' }}>
-            Isabella opera 24/7 con la información de la zapatería. Tu agente puede llamarse como quieras y hablar como habla tu marca.
-          </p>
-        </div>
-      </section>
-
       {/* CTA */}
-      <section id="cta">
+      <section id="cta" aria-label="Llamado a la acción">
         <div className="cta-glow"></div>
         <span className="section-tag reveal">¿Querés tu propio agente?</span>
         <h2 className="section-title reveal">Tu negocio, siempre activo.<br /><em style={{ color: 'var(--accent)', fontStyle: 'normal' }}>Sin vos mirando el teléfono.</em></h2>
@@ -409,10 +427,13 @@ export default function Home() {
           <a className="btn-primary" href="https://wa.me/5491178249449?text=Hola,%20quiero%20saber%20más%20sobre%20Molric">Quiero mi agente</a>
           <a className="btn-secondary" href="#form">Prefiero que me contacten</a>
         </div>
+        <p className="reveal reveal-delay-3" style={{ textAlign: 'center', marginTop: '24px', fontSize: '14px', color: 'var(--text-muted)' }}>
+          <strong style={{ color: 'var(--accent)' }}>Cupos limitados para configuración.</strong> Setup en 3-5 días hábiles.
+        </p>
       </section>
 
       {/* FORM */}
-      <section id="form">
+      <section id="form" aria-label="Formulario de contacto">
         <span className="section-tag reveal" style={{ textAlign: 'center' }}>Contacto</span>
         <h2 className="section-title reveal" style={{ textAlign: 'center' }}>Contanos de tu negocio.</h2>
         <div className="form-container reveal reveal-delay-1">
@@ -453,7 +474,7 @@ export default function Home() {
                 value={formData.rubro}
                 onChange={handleChange}
                 required
-                placeholder="Ej: Inmobiliaria, Estética, Abogado..."
+                placeholder="Ej: Estética, Depilación, Manicuría..."
               />
             </div>
             <button className="form-submit" type="submit" disabled={submitting}>
@@ -478,8 +499,8 @@ export default function Home() {
         <a className="footer-logo" href="#" style={{ textTransform: 'lowercase' }}>molr<span style={{ color: 'var(--accent)' }}>i</span>c</a>
         <ul className="footer-links">
           <li><a href="#problem">Problema</a></li>
-          <li><a href="#how">Proceso</a></li>
-          <li><a href="#benefits">Beneficios</a></li>
+          <li><a href="#demo">Demo</a></li>
+          <li><a href="#pricing">Precios</a></li>
           <li><a href="#form">Contacto</a></li>
         </ul>
         <span className="footer-copy">2026 Molric. Todos los derechos reservados.</span>
