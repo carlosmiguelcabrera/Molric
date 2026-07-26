@@ -16,7 +16,7 @@ export default function Home() {
   const [formData, setFormData] = useState({
     nombre: '',
     whatsapp: '',
-    rubro: ''
+    zona: ''
   })
   const [submitting, setSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState(null)
@@ -48,13 +48,13 @@ export default function Home() {
           body: JSON.stringify({
             nombre: formData.nombre,
             whatsapp: formData.whatsapp,
-            rubro: formData.rubro,
+            zona: formData.zona,
           }),
         }
       )
       if (!response.ok) throw new Error(`HTTP ${response.status}`)
       setSubmitStatus('success')
-      setFormData({ nombre: '', whatsapp: '', rubro: '' })
+      setFormData({ nombre: '', whatsapp: '', zona: '' })
     } catch (err) {
       console.error('Error al enviar formulario:', err)
       setSubmitStatus('error')
@@ -157,7 +157,7 @@ export default function Home() {
             Recuperá las clientas que dejaste de ver.
           </h1>
           <p className="hero-subheadline">
-            Sin que toques el teléfono. Sin contratar a nadie.
+            Sin que toques el teléfono. Sin contratar recepcionista.
           </p>
           <p className="hero-sub">
             Molric crea un agente en WhatsApp que responde, califica y reactiva clientas por tu estética las 24 horas. Como una recepcionista real, pero sin vacaciones.
@@ -266,7 +266,7 @@ export default function Home() {
         <div className="steps">
           <div className="step reveal">
             <div className="step-circle">01</div>
-            <h3>Vos nos contás de tu estética</h3>
+            <h3>Nos contás tu estética</h3>
             <p>Nos cuentas sobre tus servicios, horarios y precios. Nosotros nos encargamos del resto.</p>
           </div>
           <div className="step reveal reveal-delay-1">
@@ -289,23 +289,23 @@ export default function Home() {
         <div className="benefits-grid">
           <div className="benefit-card reveal">
             <span className="benefit-icon">⚡</span>
-            <h3>Reactivación proactiva</h3>
+            <h3>Recuperás clientas dormidas</h3>
             <p>Tu agente detecta qué clienta no asiste hace 30 días y le escribe para reagendarla. Eso es plata que ya tenías perdida.</p>
           </div>
           <div className="benefit-card reveal reveal-delay-1">
             <span className="benefit-icon">🎯</span>
-            <h3>No es un bot, es una recepcionista</h3>
-            <p>Habla de forma natural, entiende contexto y se siente como una persona real. Tus clientas no notan la diferencia.</p>
+            <h3>Tus clientas no notan la diferencia</h3>
+            <p>Habla de forma natural, entiende contexto y se siente como una persona real. No como esos bots numerados que ya probaste.</p>
           </div>
           <div className="benefit-card reveal reveal-delay-2">
             <span className="benefit-icon">💰</span>
-            <h3>Más barato que una empleada</h3>
+            <h3>Ahorro real vs. una recepcionista</h3>
             <p>Una recepcionista part-time cuesta $400–600 USD/mes. Molric cuesta $149, atiende 24/7 y nunca agarra vacaciones.</p>
           </div>
           <div className="benefit-card reveal reveal-delay-3">
             <span className="benefit-icon">🌙</span>
-            <h3>Tu teléfono deja de sonar</h3>
-            <p>El agente atiende mientras estás en un turno, mientras dormís, o un domingo de sol. Vos dejás de estar atado al celular.</p>
+            <h3>Dejás de estar atado al celular</h3>
+            <p>El agente atiende mientras estás con un cliente, mientras dormís, o un domingo de sol. Tu teléfono deja de sonar.</p>
           </div>
         </div>
       </section>
@@ -329,7 +329,7 @@ export default function Home() {
             <li>✓ Reactivación automática de clientas</li>
             <li>✓ Digitalización de tu base de contactos</li>
             <li>✓ Soporte dedicado y monitoreo</li>
-            <li>🛡️ <strong>Garantía de 10 turnos:</strong> Si el primer mes no logramos al menos 10 turnos agendados, te devolvemos el valor del setup.</li>
+            <li>🛡️ <strong>Garantía de 10 turnos:</strong> Si el primer mes no logramos al menos 10 turnos reales, te devolvemos el valor del setup.</li>
           </ul>
           <div className="pricing-cta">
             <a className="btn-primary" href="https://wa.me/5491178249449?text=Hola,%20quiero%20saber%20más%20sobre%20Molric">Quiero mi agente</a>
@@ -465,16 +465,16 @@ export default function Home() {
               />
             </div>
             <div className="form-group">
-              <label className="form-label" htmlFor="rubro">Rubro</label>
+              <label className="form-label" htmlFor="zona">Zona</label>
               <input
                 className="form-input"
                 type="text"
-                id="rubro"
-                name="rubro"
-                value={formData.rubro}
+                id="zona"
+                name="zona"
+                value={formData.zona}
                 onChange={handleChange}
                 required
-                placeholder="Ej: Estética, Depilación, Manicuría..."
+                placeholder="Ej: Belgrano, Palermo, Caballito..."
               />
             </div>
             <button className="form-submit" type="submit" disabled={submitting}>
