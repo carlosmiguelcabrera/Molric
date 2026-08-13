@@ -174,8 +174,8 @@ export default function Home() {
       <section id="problem" aria-label="Problema y solución">
         <div className="reveal">
           <span className="section-tag">El problema</span>
-          <h2 className="section-title">Tu WhatsApp no debería perder clientas por vos.</h2>
-          <p className="section-sub">Cada vez que no podés responder a tiempo, una clienta se va a la competencia. Y no vuelve.</p>
+          <h2 className="section-title">Tus clientas escriben. Molric responde.</h2>
+          <p className="section-sub">Atendé consultas, recuperá clientas y agendá turnos automáticamente, incluso cuando estás ocupada.</p>
           <ul className="problem-list">
             <li className="problem-item">
               <span className="problem-icon">→</span>
