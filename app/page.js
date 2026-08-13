@@ -296,7 +296,7 @@ export default function Home() {
           <div className="benefit-card reveal reveal-delay-1">
             <span className="benefit-icon">🎯</span>
             <h3>Tus clientas no notan la diferencia</h3>
-            <p>Habla de forma natural, entiende contexto y se siente como una persona real. No como esos bots numerados que ya probaste.</p>
+            <p>Habla de forma natural, entiende contexto y se siente como una persona real. No como esos bots numerados que frustran a los clientes.</p>
           </div>
           <div className="benefit-card reveal reveal-delay-2">
             <span className="benefit-icon">💰</span>
