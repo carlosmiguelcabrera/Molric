@@ -389,7 +389,7 @@ export default function Home() {
           <span className="section-tag reveal">El cálculo es simple</span>
           <h2 className="section-title reveal" style={{ fontSize: '32px' }}>3 turnos recuperados = $149 recuperados.</h2>
           <p className="section-sub reveal reveal-delay-1" style={{ margin: '0 auto 32px', maxWidth: '600px' }}>
-            Si tu ticket promedio es de $50 USD, con rescatar <strong>3 clientas</strong> que dejaron de venir, el servicio se paga solo. Lo que venga después es ganancia pura.
+            Si tu ticket promedio es de $50 USD, con recuperar <strong>3 clientas</strong> que dejaron de venir, el servicio se paga solo. Lo que venga después es ganancia pura.
           </p>
           <div className="reveal reveal-delay-2" style={{ display: 'flex', justifyContent: 'center', gap: '48px', flexWrap: 'wrap' }}>
             <div style={{ textAlign: 'center' }}>
