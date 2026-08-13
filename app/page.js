@@ -300,7 +300,7 @@ export default function Home() {
           <div className="benefit-card reveal reveal-delay-2">
             <span className="benefit-icon">💰</span>
             <h3>Ahorro real vs. una recepcionista</h3>
-            <p>Una recepcionista part-time cuesta $400–600 USD/mes. Molric cuesta $149, atiende 24/7 y nunca agarra vacaciones.</p>
+            <p>Una recepcionista part-time cuesta $400–600 USD/mes. Molric cuesta $149 USD, atiende 24/7 y nunca toma vacaciones.</p>
           </div>
           <div className="benefit-card reveal reveal-delay-3">
             <span className="benefit-icon">🌙</span>
@@ -337,7 +337,7 @@ export default function Home() {
           </div>
         </div>
         <p className="pricing-comparison reveal reveal-delay-3" style={{ textAlign: 'center', marginTop: '24px', color: 'var(--text-muted)', fontSize: '14px' }}>
-          <strong>Compará:</strong> Una recepcionista part-time cuesta $400–600 USD/mes. Molric cuesta $149 USD, atiende 24/7 y nunca agarra vacaciones.
+          <strong>Compará:</strong> Una recepcionista part-time cuesta $400–600 USD/mes. Molric cuesta $149 USD, atiende 24/7 y nunca toma vacaciones.
         </p>
       </section>
 
