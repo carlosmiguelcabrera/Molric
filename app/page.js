@@ -8,7 +8,7 @@ const DEMO_MESSAGES = [
   { role: 'client', text: 'Hola, sí, justo estaba pensando en volver. ¿Tenés lugar para el sábado?' },
   { role: 'agent',  text: '¡Claro! Para el sábado tengo disponible a las 10 hs o a las 15 hs. ¿Cuál te queda mejor?' },
   { role: 'client', text: 'A las 15 está bien. ¿Cuánto sale la sesión?' },
-  { role: 'agent',  text: 'La sesión de depilación láser de axilas está $18.000. Además, como estás retomando tus sesiones, puedo mantenerte el 10% de descuento en el pack de 4 sesiones. 😊' },
+  { role: 'agent',  text: 'La sesión de depilación láser de axilas está $38.000. Además, como estás retomando tus sesiones, puedo mantenerte el 10% de descuento en el pack de 4 sesiones. 😊' },
   { role: 'client', text: 'Sí, agendame.' },
   { role: 'agent',  text: '¡Listo, Marta! ✅ Quedaste agendada para el sábado a las 15 hs. Te paso por acá los datos para realizar el pago y confirmar el turno. ¡Te esperamos! 🌸' },
 ]
