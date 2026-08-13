@@ -103,8 +103,11 @@ export default function Home() {
   useEffect(() => {
     if (visibleCount >= 5) {
       const container = document.querySelector('.demo-messages')
-      if (container) {
-        container.scrollTop = container.scrollHeight
+      const firstMsg = document.querySelector('.demo-msg-wrapper')
+      if (container && firstMsg) {
+        const maxScroll = container.scrollHeight - container.clientHeight
+        const firstMsgBottom = firstMsg.offsetTop + firstMsg.offsetHeight + 8
+        container.scrollTop = Math.min(maxScroll, firstMsgBottom)
       }
     }
   }, [visibleCount])
