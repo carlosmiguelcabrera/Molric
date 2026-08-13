@@ -409,10 +409,10 @@ export default function Home() {
 
       {/* QUALITY ASSURANCE & GUARANTEE */}
       <section id="guarantee" aria-label="Garantía de servicio" style={{ padding: '80px 24px', textAlign: 'center' }}>
-        <div className="reveal" style={{ maxWidth: '700px', margin: '0 auto' }}>
+        <div className="reveal" style={{ maxWidth: '700px', margin: '0 auto', textAlign: 'center' }}>
           <span className="section-tag">Nuestra Garantía</span>
           <h2 className="section-title">Probá sin riesgo.</h2>
-          <p className="section-sub" style={{ marginBottom: '32px' }}>
+          <p className="section-sub" style={{ margin: '0 auto 32px', textAlign: 'center' }}>
             Queremos que la decisión sea fácil para vos. Por eso respaldamos nuestro servicio con una garantía de resultados clara.
           </p>
           <div style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: '16px', padding: '32px', textAlign: 'left', display: 'flex', gap: '24px', alignItems: 'flex-start', boxShadow: '0 4px 20px rgba(13,13,15,0.03)' }}>
