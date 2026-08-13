@@ -101,14 +101,12 @@ export default function Home() {
   }, [visibleCount])
 
   useEffect(() => {
-    if (visibleCount >= 5) {
-      const container = document.querySelector('.demo-messages')
-      const firstMsg = document.querySelector('.demo-msg-wrapper')
-      if (container && firstMsg) {
-        const maxScroll = container.scrollHeight - container.clientHeight
-        const firstMsgBottom = firstMsg.offsetTop + firstMsg.offsetHeight + 8
-        container.scrollTop = Math.min(maxScroll, firstMsgBottom)
-      }
+    const container = document.querySelector('.demo-messages')
+    if (!container) return
+    if (visibleCount >= 5 && visibleCount < DEMO_MESSAGES.length) {
+      container.scrollTop = container.scrollHeight
+    } else if (visibleCount === DEMO_MESSAGES.length) {
+      container.scrollTop = 0
     }
   }, [visibleCount])
 
