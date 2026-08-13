@@ -316,7 +316,7 @@ export default function Home() {
         <span className="section-tag reveal">Inversión</span>
         <h2 className="section-title reveal">¿Cuánto cuesta recuperar clientas?</h2>
         <p className="section-sub reveal reveal-delay-1" style={{ margin: '0 auto 40px', textAlign: 'center' }}>
-          Si logramos rescatar apenas 3 turnos que antes se perdían por no responder a tiempo, ya se paga solo.
+          Si logramos recuperar apenas 3 turnos que antes se perdían por no responder a tiempo, ya se paga solo.
         </p>
         <div className="pricing-grid">
           <div className="pricing-card reveal reveal-delay-1">
