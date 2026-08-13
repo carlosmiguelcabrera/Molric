@@ -524,10 +524,6 @@ section { padding: 100px 60px; }
   color: #fff;
 }
 
-.pricing-card .pricing-cta {
-  margin-top: auto;
-}
-
 .pricing-header {
   margin-bottom: 32px;
 }
@@ -592,10 +588,19 @@ section { padding: 100px 60px; }
   margin-top: 24px;
 }
 
+.pricing-card .pricing-cta {
+  margin-top: auto;
+}
+
+.pricing-cta .btn-primary {
+  width: 100%;
+}
+
 .pricing-note {
   font-size: 13px;
   color: var(--text-muted);
   margin-top: 16px;
+  min-height: 40px;
 }
 
 .pricing-comparison {
