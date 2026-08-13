@@ -267,8 +267,8 @@ export default function Home() {
         <div className="steps">
           <div className="step reveal">
             <div className="step-circle">01</div>
-            <h3>Nos contás tu estética</h3>
-            <p>Nos cuentas sobre tus servicios, horarios y precios. Nosotros nos encargamos del resto.</p>
+            <h3>Nos contás sobre tu estética</h3>
+            <p>Nos hablas sobre tus servicios, horarios y precios. Nosotros nos encargamos del resto.</p>
           </div>
           <div className="step reveal reveal-delay-1">
             <div className="step-circle">02</div>
