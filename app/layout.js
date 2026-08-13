@@ -185,14 +185,6 @@ export default function RootLayout({ children }) {
       },
       {
         '@type': 'Question',
-        name: '¿Puedo probar antes de contratar?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Sí. Hacemos una demo personalizada con la información de tu estética para que veas cómo funciona antes de comprometerte. Sin compromiso, sin tarjeta.',
-        },
-      },
-      {
-        '@type': 'Question',
         name: '¿Mis datos quedan seguros?',
         acceptedAnswer: {
           '@type': 'Answer',

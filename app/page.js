@@ -407,10 +407,6 @@ export default function Home() {
             <p className="faq-answer">El agente deriva automáticamente a un humano cuando detecta que la consulta es compleja. Nunca pierde una venta por no saber responder.</p>
           </div>
           <div className="faq-item">
-            <h3 className="faq-question">¿Puedo probar antes de contratar?</h3>
-            <p className="faq-answer">Sí. Hacemos una demo personalizada con la información de tu estética para que veas cómo funciona antes de comprometerte. Sin compromiso, sin tarjeta.</p>
-          </div>
-          <div className="faq-item">
             <h3 className="faq-question">¿Mis datos quedan seguros?</h3>
             <p className="faq-answer">Todo queda a tu nombre desde el día uno: el número de WhatsApp, la cuenta de Meta, tu base de clientas. Si en algún momento decidís salir, te entrego todo. No hay lock-in.</p>
           </div>
