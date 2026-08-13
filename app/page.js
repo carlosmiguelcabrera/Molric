@@ -204,7 +204,7 @@ export default function Home() {
           <h2 className="section-title">Un agente que habla como vos y reactiva por vos.</h2>
             <div className="solution-card">
               <h3>Tu identidad, no un bot</h3>
-              <p>Le ponés nombre, lo entrenamos con tu información y suena como tu recepcionista. Tus clientas no hablan con un bot, hablan con alguien que las conoce.</p>
+              <p>Le ponés nombre, lo entrenamos con tu información y suena como tu recepcionista. Tus clientas no hablan con un bot genérico, hablan con alguien que las conoce.</p>
             </div>
           <div className="solution-card">
             <h3>Reactivación automática</h3>
