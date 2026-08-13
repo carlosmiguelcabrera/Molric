@@ -205,7 +205,7 @@ export default function Home() {
           <h2 className="section-title">Un agente que habla como vos y reactiva por vos.</h2>
             <div className="solution-card">
               <h3>Tu identidad, no un bot</h3>
-              <p>Le ponés nombre, configuramos tu agente con la información de tu negocio y suena como tu recepcionista. Tus clientas no hablan con un bot genérico, hablan con alguien que las conoce.</p>
+              <p>Le ponés nombre, lo configuramos con la información de tu negocio y habla como tu marca. No es un bot genérico. Es el agente de tu negocio.</p>
             </div>
           <div className="solution-card">
             <h3>Reactivación automática</h3>
@@ -464,7 +464,7 @@ export default function Home() {
         <div className="cta-glow"></div>
         <span className="section-tag reveal">¿Querés tu propio agente?</span>
         <h2 className="section-title reveal">Tu negocio, siempre activo.<br /><em style={{ color: 'var(--accent)', fontStyle: 'normal' }}>Sin vos mirando el teléfono.</em></h2>
-        <p className="section-sub reveal reveal-delay-1">Setup en días, no semanas. Operación 100% gestionada. Vos solo entrás a cerrar las ventas.</p>
+        <p className="section-sub reveal reveal-delay-1">Vos intervenís cuando hace falta. Molric te avisa cuando una conversación necesita de vos.</p>
         <div className="cta-actions reveal reveal-delay-2">
           <a className="btn-primary" href="https://wa.me/5491178249449?text=Hola,%20quiero%20saber%20más%20sobre%20Molric">Quiero mi agente</a>
           <a className="btn-secondary" href="#form">Prefiero que me contacten</a>
