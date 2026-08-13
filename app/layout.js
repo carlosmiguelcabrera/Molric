@@ -106,7 +106,7 @@ export default function RootLayout({ children }) {
     serviceType: 'Agente de WhatsApp con IA',
     hasGuarantee: {
       '@type': 'Offer',
-      name: 'Garantía de 10 Turnos',
+      name: 'Garantía de 6 Turnos',
       description: 'Si durante los primeros 30 días de funcionamiento tu agente no logra agendar al menos 6 turnos reales, te devolvemos el 100% de la tarifa de setup.',
       price: '0',
       priceCurrency: 'USD',

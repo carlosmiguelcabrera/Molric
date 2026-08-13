@@ -418,7 +418,7 @@ export default function Home() {
           <div style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: '16px', padding: '32px', textAlign: 'left', display: 'flex', gap: '24px', alignItems: 'flex-start', boxShadow: '0 4px 20px rgba(13,13,15,0.03)' }}>
             <span style={{ fontSize: '32px', lineHeight: 1 }}>🛡️</span>
             <div>
-              <h3 style={{ fontSize: '18px', fontWeight: 700, marginBottom: '8px', color: 'var(--text)', fontFamily: 'var(--font-display)' }}>Compromiso de 10 Turnos Garantizados</h3>
+              <h3 style={{ fontSize: '18px', fontWeight: 700, marginBottom: '8px', color: 'var(--text)', fontFamily: 'var(--font-display)' }}>Compromiso de 6 Turnos Garantizados</h3>
               <p style={{ fontSize: '14.5px', color: 'var(--text-muted)', lineHeight: '1.6' }}>
                 Si durante los primeros 30 días de funcionamiento tu agente personalizado de WhatsApp no logra agendar al menos <strong>6 turnos reales</strong> para tu estética, te devolvemos el 100% de la tarifa de setup de manera inmediata. Sin preguntas, sin vueltas.
               </p>
