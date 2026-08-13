@@ -205,15 +205,18 @@ export default function Home() {
           <h2 className="section-title">Un agente que habla como vos y reactiva por vos.</h2>
             <div className="solution-card">
               <h3>Tu identidad, no un bot</h3>
-              <p>Le ponés nombre, lo entrenamos con tu información y suena como tu recepcionista. Tus clientas no hablan con un bot genérico, hablan con alguien que las conoce.</p>
+              <p>Le ponés nombre, configuramos tu agente con la información de tu negocio y suena como tu recepcionista. Tus clientas no hablan con un bot genérico, hablan con alguien que las conoce.</p>
             </div>
           <div className="solution-card">
             <h3>Reactivación automática</h3>
-            <p>Tu agente detecta qué clienta no asiste hace 30 días y le escribe para reagendarla. Eso es plata que ya tenías perdida.</p>
+            <p>Tu agente detecta qué clienta no asiste hace 30 días y le escribe para reagendarla. Son clientas que ya te conocen y que podés volver a activar.</p>
           </div>
           <div className="solution-card">
             <h3>Menos estrés, más turnos</h3>
             <p>Tu agente filtra, responde y te avisa solo cuando hay una clienta lista para comprar. Dejá de estar pegado al celular.</p>
+          </div>
+          <div className="solution-highlight reveal">
+            <strong>No estás empezando de cero.</strong> Ya tenés cientos de clientas que alguna vez eligieron tu negocio. Molric las ayuda a volver.
           </div>
         </div>
       </section>
@@ -273,7 +276,7 @@ export default function Home() {
           <div className="step reveal reveal-delay-1">
             <div className="step-circle">02</div>
             <h3>Creamos tu agente</h3>
-            <p>Configuramos un agente con el nombre y personalidad que vos elijas, entrenado con tu información.</p>
+            <p>Configuramos tu agente con el nombre y personalidad que vos elijas, usando la información de tu negocio.</p>
           </div>
           <div className="step reveal reveal-delay-2">
             <div className="step-circle">03</div>
@@ -291,17 +294,17 @@ export default function Home() {
           <div className="benefit-card reveal">
             <span className="benefit-icon">⚡</span>
             <h3>Recuperás clientas dormidas</h3>
-            <p>Tu agente detecta qué clienta no asiste hace 30 días y le escribe para reagendarla. Eso es plata que ya tenías perdida.</p>
+            <p>Tu agente detecta qué clienta no asiste hace 30 días y le escribe para reagendarla. Son clientas que ya te conocen y que podés volver a activar.</p>
           </div>
           <div className="benefit-card reveal reveal-delay-1">
             <span className="benefit-icon">🎯</span>
-            <h3>Tus clientas no notan la diferencia</h3>
-            <p>Habla de forma natural, entiende contexto y se siente como una persona real. No como esos bots numerados que frustran a los clientes.</p>
+            <h3>Conversaciones naturales, no respuestas automáticas</h3>
+            <p>Molric responde teniendo en cuenta la información de tu negocio y mantiene conversaciones naturales con tus clientas.</p>
           </div>
           <div className="benefit-card reveal reveal-delay-2">
             <span className="benefit-icon">💰</span>
             <h3>Ahorro real vs. una recepcionista</h3>
-            <p>Una recepcionista part-time cuesta $400–600 USD/mes. Molric cuesta $149 USD, atiende 24/7 y nunca toma vacaciones.</p>
+            <p>Una recepcionista no trabaja 24/7. Molric sí. Y cuesta desde $149 USD/mes.</p>
           </div>
           <div className="benefit-card reveal reveal-delay-3">
             <span className="benefit-icon">🌙</span>
@@ -323,7 +326,8 @@ export default function Home() {
             <div className="pricing-header">
               <span className="pricing-badge">Para estéticas</span>
               <h3 className="pricing-price">Desde $149 USD<span style={{ fontSize: '16px', opacity: 0.7 }}>/mes</span></h3>
-              <p className="pricing-setup">Setup inicial: $500 USD (única vez)</p>
+              <p className="pricing-setup">Implementación inicial: $500 USD (única vez)</p>
+              <p className="pricing-setup-desc">Configuramos tu agente con la información de tu negocio, conectamos tus canales y dejamos todo listo para empezar a recuperar clientas.</p>
             </div>
             <ul className="pricing-features">
               <li>✓ Agente personalizado con nombre y personalidad</li>
@@ -331,7 +335,7 @@ export default function Home() {
               <li>✓ Reactivación automática de clientas</li>
               <li>✓ Digitalización de tu base de contactos</li>
               <li>✓ Soporte dedicado y monitoreo</li>
-              <li>🛡️ <strong>Garantía de 6 turnos:</strong> Si el primer mes no logramos al menos 6 turnos reales, te devolvemos el valor del setup.</li>
+              <li>🛡️ <strong>Sin permanencia:</strong> Si en los primeros 30 días Molric no te aporta valor, cancelás sin costo.</li>
             </ul>
             <div className="pricing-cta">
               <a className="btn-primary" href="https://wa.me/5491178249449?text=Hola,%20quiero%20saber%20más%20sobre%20Molric">Quiero mi agente</a>
@@ -379,7 +383,7 @@ export default function Home() {
           </div>
         </div>
         <p className="pricing-comparison reveal reveal-delay-4" style={{ textAlign: 'center', marginTop: '24px', color: 'var(--text-muted)', fontSize: '14px' }}>
-          <strong>Compará:</strong> Una recepcionista part-time cuesta $400–600 USD/mes. Molric cuesta $149 USD, atiende 24/7 y nunca toma vacaciones.
+          <strong>Compará:</strong> Una recepcionista no trabaja 24/7. Molric sí. Atendé consultas y recuperá clientas incluso cuando tu equipo está ocupado. Desde $149 USD/mes.
         </p>
       </section>
 
@@ -414,14 +418,14 @@ export default function Home() {
           <span className="section-tag">Nuestra Garantía</span>
           <h2 className="section-title">Probá sin riesgo.</h2>
           <p className="section-sub" style={{ margin: '0 auto 32px', textAlign: 'center' }}>
-            Queremos que la decisión sea fácil para vos. Por eso respaldamos nuestro servicio con una garantía de resultados clara.
+            Queremos que la decisión sea fácil para vos. Por eso Molric se contrata sin permanencia.
           </p>
           <div style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: '16px', padding: '32px', textAlign: 'left', display: 'flex', gap: '24px', alignItems: 'flex-start', boxShadow: '0 4px 20px rgba(13,13,15,0.03)' }}>
             <span style={{ fontSize: '32px', lineHeight: 1 }}>🛡️</span>
             <div>
-              <h3 style={{ fontSize: '18px', fontWeight: 700, marginBottom: '8px', color: 'var(--text)', fontFamily: 'var(--font-display)' }}>Compromiso de 6 Turnos Garantizados</h3>
+              <h3 style={{ fontSize: '18px', fontWeight: 700, marginBottom: '8px', color: 'var(--text)', fontFamily: 'var(--font-display)' }}>Garantía de satisfacción</h3>
               <p style={{ fontSize: '14.5px', color: 'var(--text-muted)', lineHeight: '1.6' }}>
-                Si durante los primeros 30 días de funcionamiento tu agente personalizado de WhatsApp no logra agendar al menos <strong>6 turnos reales</strong> para tu estética, te devolvemos el 100% de la tarifa de setup de manera inmediata. Sin preguntas, sin vueltas.
+                Si después de los primeros 30 días sentís que Molric no está aportando valor a tu negocio, podés cancelar sin permanencia.
               </p>
             </div>
           </div>
@@ -438,11 +442,11 @@ export default function Home() {
         <div className="faq-container reveal reveal-delay-2">
           <div className="faq-item">
             <h3 className="faq-question">¿Necesito saber de tecnología para usar Molric?</h3>
-            <p className="faq-answer">No. Nosotros nos encargamos de todo: configuramos tu agente, lo entrenamos con la información de tu estética y lo dejamos listo para usar. Vos solo seguís recibiendo los mensajes como siempre.</p>
+            <p className="faq-answer">No. Nosotros nos encargamos de todo: configuramos tu agente con la información de tu estética y lo dejamos listo para usar. Vos solo seguís recibiendo los mensajes como siempre.</p>
           </div>
           <div className="faq-item">
             <h3 className="faq-question">¿Mis clientas van a notar que es un agente?</h3>
-            <p className="faq-answer">No. A diferencia de los bots con opciones numeradas, nuestro agente conversa como lo harías vos: por nombre, con contexto, como una persona de verdad. Las clientas sienten que hablan con una recepcionista real.</p>
+            <p className="faq-answer">No. A diferencia de los bots con opciones numeradas, nuestro agente conversa como lo harías vos: por nombre, con contexto, como una persona de verdad. Tus clientas reciben atención personalizada, incluso cuando vos no estás disponible.</p>
           </div>
           <div className="faq-item">
             <h3 className="faq-question">¿Qué pasa si mi cliente pregunta algo que el agente no sabe?</h3>

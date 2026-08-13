@@ -106,8 +106,8 @@ export default function RootLayout({ children }) {
     serviceType: 'Agente de WhatsApp con IA',
     hasGuarantee: {
       '@type': 'Offer',
-      name: 'Garantía de 6 Turnos',
-      description: 'Si durante los primeros 30 días de funcionamiento tu agente no logra agendar al menos 6 turnos reales, te devolvemos el 100% de la tarifa de setup.',
+      name: 'Garantía de satisfacción sin permanencia',
+      description: 'Si después de los primeros 30 días sentís que Molric no está aportando valor a tu negocio, podés cancelar sin permanencia.',
       price: '0',
       priceCurrency: 'USD',
     },
@@ -164,7 +164,7 @@ export default function RootLayout({ children }) {
         name: '¿Necesito saber de tecnología para usar Molric?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'No. Nosotros nos encargamos de todo: configuramos tu agente, lo entrenamos con la información de tu estética y lo dejamos listo para usar. Vos solo seguís recibiendo los mensajes como siempre.',
+          text: 'No. Nosotros nos encargamos de todo: configuramos tu agente con la información de tu estética y lo dejamos listo para usar. Vos solo seguís recibiendo los mensajes como siempre.',
         },
       },
       {
@@ -172,7 +172,7 @@ export default function RootLayout({ children }) {
         name: '¿Mis clientas van a notar que es un agente?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'No. A diferencia de los bots con opciones numeradas, nuestro agente conversa como lo harías vos: por nombre, con contexto, como una persona de verdad. Las clientas sienten que hablan con una recepcionista real.',
+          text: 'No. A diferencia de los bots con opciones numeradas, nuestro agente conversa como lo harías vos: por nombre, con contexto, como una persona de verdad. Tus clientas reciben atención personalizada, incluso cuando vos no estás disponible.',
         },
       },
       {

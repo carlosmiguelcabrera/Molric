@@ -380,6 +380,21 @@ section { padding: 100px 60px; }
 }
 .solution-card p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
 
+.solution-highlight {
+  margin-top: 24px;
+  padding: 20px 24px;
+  border: 1px solid var(--accent);
+  background: var(--accent-dim);
+  border-radius: 12px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text);
+}
+.solution-highlight strong {
+  color: var(--accent);
+  font-family: var(--font-display);
+}
+
 /* HOW IT WORKS */
 #how { background: var(--bg); text-align: center; }
 #how .section-title, #how .section-sub { margin-left: auto; margin-right: auto; }
@@ -554,6 +569,13 @@ section { padding: 100px 60px; }
 .pricing-setup {
   font-size: 14px;
   color: var(--text-muted);
+}
+
+.pricing-setup-desc {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-top: 8px;
 }
 
 .pricing-desc {
