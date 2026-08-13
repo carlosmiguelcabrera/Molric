@@ -329,7 +329,7 @@ export default function Home() {
             <li>✓ Reactivación automática de clientas</li>
             <li>✓ Digitalización de tu base de contactos</li>
             <li>✓ Soporte dedicado y monitoreo</li>
-            <li>🛡️ <strong>Garantía de 10 turnos:</strong> Si el primer mes no logramos al menos 10 turnos reales, te devolvemos el valor del setup.</li>
+            <li>🛡️ <strong>Garantía de 6 turnos:</strong> Si el primer mes no logramos al menos 6 turnos reales, te devolvemos el valor del setup.</li>
           </ul>
           <div className="pricing-cta">
             <a className="btn-primary" href="https://wa.me/5491178249449?text=Hola,%20quiero%20saber%20más%20sobre%20Molric">Quiero mi agente</a>
@@ -379,7 +379,7 @@ export default function Home() {
             <div>
               <h3 style={{ fontSize: '18px', fontWeight: 700, marginBottom: '8px', color: 'var(--text)', fontFamily: 'var(--font-display)' }}>Compromiso de 10 Turnos Garantizados</h3>
               <p style={{ fontSize: '14.5px', color: 'var(--text-muted)', lineHeight: '1.6' }}>
-                Si durante los primeros 30 días de funcionamiento tu agente personalizado de WhatsApp no logra agendar al menos <strong>10 turnos reales</strong> para tu estética, te devolvemos el 100% de la tarifa de setup de manera inmediata. Sin preguntas, sin vueltas.
+                Si durante los primeros 30 días de funcionamiento tu agente personalizado de WhatsApp no logra agendar al menos <strong>6 turnos reales</strong> para tu estética, te devolvemos el 100% de la tarifa de setup de manera inmediata. Sin preguntas, sin vueltas.
               </p>
             </div>
           </div>

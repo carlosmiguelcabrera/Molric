@@ -107,7 +107,7 @@ export default function RootLayout({ children }) {
     hasGuarantee: {
       '@type': 'Offer',
       name: 'Garantía de 10 Turnos',
-      description: 'Si durante los primeros 30 días de funcionamiento tu agente no logra agendar al menos 10 turnos reales, te devolvemos el 100% de la tarifa de setup.',
+      description: 'Si durante los primeros 30 días de funcionamiento tu agente no logra agendar al menos 6 turnos reales, te devolvemos el 100% de la tarifa de setup.',
       price: '0',
       priceCurrency: 'USD',
     },
