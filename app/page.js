@@ -4,13 +4,13 @@ import { useState, useEffect } from 'react'
 import HeroParticles from './components/HeroParticles'
 
 const DEMO_MESSAGES = [
-  { role: 'agent',  text: '¡Hola Marta! 🌸 Te escribe Camila, de Estética Lumina. Te buscaba porque hace más de un mes que no venís y quería ofrecerte retomar tus sesiones de depilación láser.' },
+  { role: 'agent',  text: '¡Hola Marta! 🌸 Soy Camila, de Estética Lumina. Hace un tiempito que no venís y quería avisarte que tenemos disponibilidad para retomar tus sesiones de depilación láser. ¿Te gustaría que te busque un turno?' },
   { role: 'client', text: 'Hola, sí, justo estaba pensando en volver. ¿Tenés lugar para el sábado?' },
-  { role: 'agent',  text: '¡Qué bueno! Para el sábado tenemos a las 10hs o a las 15hs. ¿Cuál te queda mejor?' },
-  { role: 'client', text: 'a las 15 está bien, ¿cuánto sale la sesión?' },
-  { role: 'agent',  text: 'La sesión de depilación láser de axilas está en $18.000. Además, por retomar te mantengo el 10% de descuento en el pack de 4 sesiones.' },
-  { role: 'client', text: 'sí, agendame' },
-  { role: 'agent',  text: 'Perfecto ✅ Te agendé para el sábado a las 15hs. Te mando los datos de pago por acá. ¡Nos vemos, Marta!' },
+  { role: 'agent',  text: '¡Claro! Para el sábado tengo disponible a las 10 hs o a las 15 hs. ¿Cuál te queda mejor?' },
+  { role: 'client', text: 'A las 15 está bien. ¿Cuánto sale la sesión?' },
+  { role: 'agent',  text: 'La sesión de depilación láser de axilas está $18.000. Además, como estás retomando tus sesiones, puedo mantenerte el 10% de descuento en el pack de 4 sesiones. 😊' },
+  { role: 'client', text: 'Sí, agendame.' },
+  { role: 'agent',  text: '¡Listo, Marta! ✅ Quedaste agendada para el sábado a las 15 hs. Te paso por acá los datos para realizar el pago y confirmar el turno. ¡Te esperamos! 🌸' },
 ]
 
 export default function Home() {
