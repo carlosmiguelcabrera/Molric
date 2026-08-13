@@ -408,7 +408,7 @@ export default function Home() {
           </div>
           <div className="faq-item">
             <h3 className="faq-question">¿Mis datos quedan seguros?</h3>
-            <p className="faq-answer">Todo queda a tu nombre desde el día uno: el número de WhatsApp, la cuenta de Meta, tu base de clientas. Si en algún momento decidís salir, te entrego todo. No hay lock-in.</p>
+            <p className="faq-answer">Todo queda a tu nombre desde el día uno: el número de WhatsApp, la cuenta de Meta, tu base de clientas.</p>
           </div>
         </div>
       </section>

@@ -188,7 +188,7 @@ export default function RootLayout({ children }) {
         name: '¿Mis datos quedan seguros?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Todo queda a tu nombre desde el día uno: el número de WhatsApp, la cuenta de Meta, tu base de clientas. Si en algún momento decidís salir, te entrego todo. No hay lock-in.',
+          text: 'Todo queda a tu nombre desde el día uno: el número de WhatsApp, la cuenta de Meta, tu base de clientas.',
         },
       },
     ],
