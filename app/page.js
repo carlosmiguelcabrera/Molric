@@ -335,7 +335,7 @@ export default function Home() {
             </ul>
             <div className="pricing-cta">
               <a className="btn-primary" href="https://wa.me/5491178249449?text=Hola,%20quiero%20saber%20más%20sobre%20Molric">Quiero mi agente</a>
-              <p className="pricing-note">Funcionando desde el primer día. Sin contratos a largo plazo.</p>
+              <p className="pricing-note">Setup en días, no semanas. Funcionando desde el primer día.</p>
             </div>
           </div>
 
