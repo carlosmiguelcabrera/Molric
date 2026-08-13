@@ -317,26 +317,67 @@ export default function Home() {
         <p className="section-sub reveal reveal-delay-1" style={{ margin: '0 auto 40px', textAlign: 'center' }}>
           Si logramos rescatar apenas 3 turnos que antes se perdían por no responder a tiempo, ya se paga solo.
         </p>
-        <div className="pricing-card reveal reveal-delay-2">
-          <div className="pricing-header">
-            <span className="pricing-badge">Para estéticas</span>
-            <h3 className="pricing-price">Desde $149 USD<span style={{ fontSize: '16px', opacity: 0.7 }}>/mes</span></h3>
-            <p className="pricing-setup">Setup inicial: $500 USD (única vez)</p>
+        <div className="pricing-grid">
+          <div className="pricing-card reveal reveal-delay-1">
+            <div className="pricing-header">
+              <span className="pricing-badge">Para estéticas</span>
+              <h3 className="pricing-price">Desde $149 USD<span style={{ fontSize: '16px', opacity: 0.7 }}>/mes</span></h3>
+              <p className="pricing-setup">Setup inicial: $500 USD (única vez)</p>
+            </div>
+            <ul className="pricing-features">
+              <li>✓ Agente personalizado con nombre y personalidad</li>
+              <li>✓ Respuestas 24/7 de forma natural</li>
+              <li>✓ Reactivación automática de clientas</li>
+              <li>✓ Digitalización de tu base de contactos</li>
+              <li>✓ Soporte dedicado y monitoreo</li>
+              <li>🛡️ <strong>Garantía de 6 turnos:</strong> Si el primer mes no logramos al menos 6 turnos reales, te devolvemos el valor del setup.</li>
+            </ul>
+            <div className="pricing-cta">
+              <a className="btn-primary" href="https://wa.me/5491178249449?text=Hola,%20quiero%20saber%20más%20sobre%20Molric">Quiero mi agente</a>
+              <p className="pricing-note">Setup en días, no semanas. Sin contratos a largo plazo.</p>
+            </div>
           </div>
-          <ul className="pricing-features">
-            <li>✓ Agente personalizado con nombre y personalidad</li>
-            <li>✓ Respuestas 24/7 de forma natural</li>
-            <li>✓ Reactivación automática de clientas</li>
-            <li>✓ Digitalización de tu base de contactos</li>
-            <li>✓ Soporte dedicado y monitoreo</li>
-            <li>🛡️ <strong>Garantía de 6 turnos:</strong> Si el primer mes no logramos al menos 6 turnos reales, te devolvemos el valor del setup.</li>
-          </ul>
-          <div className="pricing-cta">
-            <a className="btn-primary" href="https://wa.me/5491178249449?text=Hola,%20quiero%20saber%20más%20sobre%20Molric">Quiero mi agente</a>
-            <p className="pricing-note">Setup en días, no semanas. Sin contratos a largo plazo.</p>
+
+          <div className="pricing-card pricing-card-featured reveal reveal-delay-2">
+            <div className="pricing-header">
+              <span className="pricing-badge">Para volumen alto</span>
+              <h3 className="pricing-price">$299 USD<span style={{ fontSize: '16px', opacity: 0.7 }}>/mes</span></h3>
+              <p className="pricing-setup">+ $950 USD setup inicial (única vez)</p>
+            </div>
+            <p className="pricing-desc">Para: un local con volumen alto, varios profesionales atendiendo en simultáneo, o que además de reactivar quiere sumar clientas nuevas.</p>
+            <ul className="pricing-features">
+              <li>✓ Todo lo de Starter</li>
+              <li>✓ Módulo de adquisición: el agente también capta y califica clientas nuevas, no solo reactiva tu base</li>
+              <li>✓ Inbox para coordinar el equipo cuando atienden varios profesionales</li>
+              <li>✓ Reporte de conversión: reactivaciones y leads nuevos que terminaron en turno</li>
+            </ul>
+            <div className="pricing-cta">
+              <a className="btn-primary" href="https://wa.me/5491178249449?text=Hola,%20quiero%20saber%20más%20sobre%20Molric">Quiero mi agente</a>
+              <p className="pricing-note">Ideal para estéticas con demanda constante.</p>
+            </div>
+          </div>
+
+          <div className="pricing-card reveal reveal-delay-3">
+            <div className="pricing-header">
+              <span className="pricing-badge">2+ locales</span>
+              <h3 className="pricing-price">A medida</h3>
+              <p className="pricing-setup">Precio por volumen, no por local individual</p>
+            </div>
+            <p className="pricing-desc">Para: empresas con sucursales.</p>
+            <ul className="pricing-features">
+              <li>✓ Un agente coordinado en todos tus locales</li>
+              <li>✓ Precio por volumen, no por local individual</li>
+              <li>✓ Un solo onboarding para toda la cadena</li>
+              <li>✓ Reporte y estadísticas general o por local</li>
+              <li>✓ Software de monitoreo en tiempo real</li>
+            </ul>
+            <div className="pricing-cta">
+              <a className="btn-primary" href="https://wa.me/5491178249449?text=Hola,%20quiero%20saber%20más%20sobre%20Molric">Hablemos</a>
+              <p className="pricing-note">Un solo onboarding para toda la cadena.</p>
+            </div>
           </div>
         </div>
-        <p className="pricing-comparison reveal reveal-delay-3" style={{ textAlign: 'center', marginTop: '24px', color: 'var(--text-muted)', fontSize: '14px' }}>
+        <p className="pricing-comparison reveal reveal-delay-4" style={{ textAlign: 'center', marginTop: '24px', color: 'var(--text-muted)', fontSize: '14px' }}>
           <strong>Compará:</strong> Una recepcionista part-time cuesta $400–600 USD/mes. Molric cuesta $149 USD, atiende 24/7 y nunca toma vacaciones.
         </p>
       </section>
