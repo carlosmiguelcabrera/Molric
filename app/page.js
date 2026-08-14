@@ -116,7 +116,7 @@ export default function Home() {
   const animateTyping = async () => {
     setVisibleCount(1)
     for (let i = 2; i <= DEMO_MESSAGES.length; i++) {
-      const delay = Math.min(5000, 600 + DEMO_MESSAGES[i - 1].text.length * 20)
+      const delay = Math.min(7000, 900 + DEMO_MESSAGES[i - 1].text.length * 30)
       await new Promise((r) => setTimeout(r, delay))
       setVisibleCount(i)
     }
