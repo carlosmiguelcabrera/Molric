@@ -106,7 +106,10 @@ export default function Home() {
     if (visibleCount >= 5 && visibleCount < DEMO_MESSAGES.length) {
       container.scrollTop = container.scrollHeight
     } else if (visibleCount === DEMO_MESSAGES.length) {
-      container.scrollTop = 0
+      const t = setTimeout(() => {
+        container.scrollTop = 0
+      }, 5000)
+      return () => clearTimeout(t)
     }
   }, [visibleCount])
 
