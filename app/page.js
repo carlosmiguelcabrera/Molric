@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import HeroParticles from './components/HeroParticles'
 
 const DEMO_MESSAGES = [
@@ -23,11 +23,6 @@ export default function Home() {
   const [submitStatus, setSubmitStatus] = useState(null)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [visibleCount, setVisibleCount] = useState(0)
-
-  useEffect(() => {
-    const timer = setTimeout(() => setVisibleCount(1), 100)
-    return () => clearTimeout(timer)
-  }, [])
 
   const handleChange = (e) => {
     setFormData({
@@ -80,25 +75,25 @@ export default function Home() {
     reveals.forEach((el) => observer.observe(el))
   }, [])
 
+  const demoAnimating = useRef(false)
+
   useEffect(() => {
-    const demoElement = document.querySelector('#demo')
+    const card = document.querySelector('.demo-card')
+    if (!card) return
     const demoObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting && visibleCount <= 1) {
-          animateTyping()
-          demoObserver.unobserve(entry.target)
+        if (entry.isIntersecting) {
+          animateTyping(true)
         }
       })
-    }, { threshold: 0.3 })
+    }, { threshold: 0.4 })
 
-    if (demoElement) {
-      demoObserver.observe(demoElement)
-    }
+    demoObserver.observe(card)
 
     return () => {
-      if (demoElement) demoObserver.unobserve(demoElement)
+      demoObserver.disconnect()
     }
-  }, [visibleCount])
+  }, [])
 
   useEffect(() => {
     const container = document.querySelector('.demo-messages')
@@ -113,13 +108,22 @@ export default function Home() {
     }
   }, [visibleCount])
 
-  const animateTyping = async () => {
+  const animateTyping = async (restart = false) => {
+    if (demoAnimating.current) return
+    demoAnimating.current = true
+    const container = document.querySelector('.demo-messages')
+    if (restart) {
+      setVisibleCount(0)
+      if (container) container.scrollTop = 0
+      await new Promise((r) => setTimeout(r, 400))
+    }
     setVisibleCount(1)
     for (let i = 2; i <= DEMO_MESSAGES.length; i++) {
       const delay = Math.min(7000, 900 + DEMO_MESSAGES[i - 1].text.length * 30)
       await new Promise((r) => setTimeout(r, delay))
       setVisibleCount(i)
     }
+    demoAnimating.current = false
   }
 
   return (
