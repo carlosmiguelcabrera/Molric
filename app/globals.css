@@ -842,7 +842,6 @@ section { padding: 100px 60px; }
   padding: 64px 16px 20px;
   height: 550px;
   overflow-y: auto;
-  scroll-behavior: smooth;
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
