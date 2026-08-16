@@ -358,12 +358,12 @@ export default function Home() {
               <h3 className="pricing-price">$299 USD<span style={{ fontSize: '16px', opacity: 0.7 }}>/mes</span></h3>
               <p className="pricing-setup">+ $950 USD setup inicial (única vez)</p>
             </div>
-            <p className="pricing-desc">Para: un local con volumen alto, varios profesionales atendiendo en simultáneo, o que además de reactivar quiere sumar clientas nuevas.</p>
+            <p className="pricing-desc">Para: un local con volumen alto, varios profesionales atendiendo en simultáneo, o que ya recibe consultas por Instagram, publicidad o referidos y no llega a responderlas a tiempo.</p>
             <ul className="pricing-features">
               <li>✓ Todo lo de Starter</li>
-              <li>✓ Módulo de adquisición: el agente también capta y califica clientas nuevas, no solo reactiva tu base</li>
+              <li>✓ Captura y responde al instante las consultas que ya te llegan por Instagram, publicidad o referidos — antes de que se enfríen y se vayan a otro lado</li>
               <li>✓ Inbox para coordinar el equipo cuando atienden varios profesionales</li>
-              <li>✓ Reporte de conversión: reactivaciones y leads nuevos que terminaron en turno</li>
+              <li>✓ Reporte de conversión: reactivaciones y consultas nuevas que terminaron en turno</li>
             </ul>
             <div className="pricing-cta">
               <a className="btn-primary" href="https://wa.me/5491178249449?text=Hola,%20quiero%20saber%20más%20sobre%20Molric">Quiero mi agente</a>
