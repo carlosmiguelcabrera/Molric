@@ -194,16 +194,18 @@ export default function RootLayout({ children }) {
     ],
   }
 
+  const jsonScript = (data) => JSON.stringify(data).replace(/</g, '\\u003c')
+
   return (
     <html lang="es" className={`${inter.variable} ${plusJakarta.variable}`}>
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: jsonScript(jsonLd) }}
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+          dangerouslySetInnerHTML={{ __html: jsonScript(faqJsonLd) }}
         />
       </head>
       <body>{children}</body>

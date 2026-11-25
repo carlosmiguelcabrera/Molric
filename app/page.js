@@ -17,7 +17,8 @@ export default function Home() {
   const [formData, setFormData] = useState({
     nombre: '',
     whatsapp: '',
-    zona: ''
+    zona: '',
+    website: ''
   })
   const [submitting, setSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState(null)
@@ -36,21 +37,14 @@ export default function Home() {
     setSubmitting(true)
     setSubmitStatus(null)
     try {
-      const response = await fetch(
-        'https://n8n.molric.com/webhook/d4b8c178-75c8-4fce-8ef2-32ba6839cfee',
-        {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            nombre: formData.nombre,
-            whatsapp: formData.whatsapp,
-            zona: formData.zona,
-          }),
-        }
-      )
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      })
       if (!response.ok) throw new Error(`HTTP ${response.status}`)
       setSubmitStatus('success')
-      setFormData({ nombre: '', whatsapp: '', zona: '' })
+      setFormData({ nombre: '', whatsapp: '', zona: '', website: '' })
     } catch (err) {
       console.error('Error al enviar formulario:', err)
       setSubmitStatus('error')
@@ -76,6 +70,24 @@ export default function Home() {
   }, [])
 
   const demoAnimating = useRef(false)
+
+  const animateTyping = async (restart = false) => {
+    if (demoAnimating.current) return
+    demoAnimating.current = true
+    const container = document.querySelector('.demo-messages')
+    if (restart) {
+      setVisibleCount(0)
+      if (container) container.scrollTop = 0
+      await new Promise((r) => setTimeout(r, 400))
+    }
+    setVisibleCount(1)
+    for (let i = 2; i <= DEMO_MESSAGES.length; i++) {
+      const delay = Math.min(7000, 900 + DEMO_MESSAGES[i - 1].text.length * 30)
+      await new Promise((r) => setTimeout(r, delay))
+      setVisibleCount(i)
+    }
+    demoAnimating.current = false
+  }
 
   useEffect(() => {
     const card = document.querySelector('.demo-card')
@@ -107,24 +119,6 @@ export default function Home() {
       return () => clearTimeout(t)
     }
   }, [visibleCount])
-
-  const animateTyping = async (restart = false) => {
-    if (demoAnimating.current) return
-    demoAnimating.current = true
-    const container = document.querySelector('.demo-messages')
-    if (restart) {
-      setVisibleCount(0)
-      if (container) container.scrollTop = 0
-      await new Promise((r) => setTimeout(r, 400))
-    }
-    setVisibleCount(1)
-    for (let i = 2; i <= DEMO_MESSAGES.length; i++) {
-      const delay = Math.min(7000, 900 + DEMO_MESSAGES[i - 1].text.length * 30)
-      await new Promise((r) => setTimeout(r, delay))
-      setVisibleCount(i)
-    }
-    demoAnimating.current = false
-  }
 
   return (
     <div>
@@ -204,7 +198,7 @@ export default function Home() {
               <span className="problem-icon">§</span>
               <div className="problem-text">
                 <strong>Un bot genérico no te representa</strong>
-                <p>Tus clientas lo notan. "Escribí 1 para turnos, 2 para precios". Eso ya no funciona.</p>
+                <p>Tus clientas lo notan. &quot;Escribí 1 para turnos, 2 para precios&quot;. Eso ya no funciona.</p>
               </div>
             </li>
           </ul>
@@ -489,6 +483,16 @@ export default function Home() {
         <h2 className="section-title reveal" style={{ textAlign: 'center' }}>Contanos de tu negocio.</h2>
         <div className="form-container reveal reveal-delay-1">
           <form onSubmit={handleSubmit}>
+            <div style={{ display: 'none' }} aria-hidden="true">
+              <input
+                type="text"
+                name="website"
+                value={formData.website}
+                onChange={handleChange}
+                autoComplete="off"
+                tabIndex={-1}
+              />
+            </div>
             <div className="form-group">
               <label className="form-label" htmlFor="nombre">Nombre</label>
               <input
@@ -499,6 +503,8 @@ export default function Home() {
                 value={formData.nombre}
                 onChange={handleChange}
                 required
+                maxLength={120}
+                autoComplete="name"
                 placeholder="Tu nombre"
               />
             </div>
@@ -512,6 +518,8 @@ export default function Home() {
                 value={formData.whatsapp}
                 onChange={handleChange}
                 required
+                maxLength={25}
+                autoComplete="tel"
                 placeholder="Tu número de WhatsApp"
               />
             </div>
@@ -525,6 +533,7 @@ export default function Home() {
                 value={formData.zona}
                 onChange={handleChange}
                 required
+                maxLength={120}
                 placeholder="Ej: Belgrano, Palermo, Caballito..."
               />
             </div>
@@ -541,6 +550,9 @@ export default function Home() {
                 ❌ Ocurrió un error. Por favor intentá de nuevo.
               </p>
             )}
+            <p style={{ marginTop: '16px', fontSize: '12px', color: 'var(--text-muted)', textAlign: 'center' }}>
+              Tus datos se usan únicamente para responder tu consulta.
+            </p>
           </form>
         </div>
       </section>
